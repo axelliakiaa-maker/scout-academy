@@ -1,0 +1,5880 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scout Academy</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5ef;
+    color: #203326;
+}
+
+header {
+    background: #173d2b;
+    color: white;
+    padding: 25px 20px;
+    border-radius: 0 0 25px 25px;
+}
+
+.logo {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #b8d7bd;
+}
+
+header h1 {
+    font-size: 27px;
+    margin-top: 12px;
+}
+
+header p {
+    font-size: 13px;
+    margin-top: 8px;
+    color: #d5e5d8;
+}
+
+.container {
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 18px;
+    margin: 20px 0 13px;
+}
+
+.welcome {
+    background: white;
+    padding: 18px;
+    border-radius: 17px;
+    box-shadow: 0 3px 12px #0000000a;
+}
+
+.welcome h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #68776c;
+}
+
+.golongan {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.card {
+    background: white;
+    padding: 18px 13px;
+    border-radius: 16px;
+    border: 1px solid #e0e9df;
+}
+
+.card .emoji {
+    font-size: 28px;
+}
+
+.card h3 {
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.card p {
+    font-size: 12px;
+    color: #718075;
+    margin-top: 5px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">SCOUT ACADEMY</div>
+    <h1>Belajar Pramuka 🌲</h1>
+    <p>Jelajahi ilmu, keterampilan, dan petualangan.</p>
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <h2>Selamat Datang, Pramuka!</h2>
+        <p>
+            Temukan berbagai materi kepramukaan,
+            pelajari keterampilan baru, dan tingkatkan
+            kemampuanmu bersama Scout Academy.
+        </p>
+    </section>
+
+    <h2 class="section-title">Golongan Pramuka</h2>
+
+    <section class="golongan">
+
+        <div class="card">
+            <div class="emoji">🐣</div>
+            <h3>Siaga</h3>
+            <p>Usia 7–10 tahun</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">⚜️</div>
+            <h3>Penggalang</h3>
+            <p>Usia 11–15 tahun</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🏕️</div>
+            <h3>Penegak</h3>
+            <p>Usia 16–20 tahun</p>
+        </div>
+
+        <div class="card">
+            <div class="emoji">🌳</div>
+            <h3>Pandega</h3>
+            <p>Usia 21–25 tahun</p>
+        </div>
+
+    </section>
+        <h2 class="section-title">Menu Belajar</h2>
+
+    <section class="golongan">
+
+        <div class="card" onclick="bukaMateri('sku')">
+            <div class="emoji">📘</div>
+            <h3>SKU</h3>
+            <p>Syarat Kecakapan Umum</p>
+        </div>
+
+        <div class="card" onclick="bukaMateri('skk')">
+            <div class="emoji">🏅</div>
+            <h3>SKK</h3>
+            <p>Syarat Kecakapan Khusus</p>
+        </div>
+
+        <div class="card" onclick="bukaMateri('sandi')">
+            <div class="emoji">🔐</div>
+            <h3>Sandi Pramuka</h3>
+            <p>Pelajari berbagai sandi</p>
+        </div>
+
+        <div class="card" onclick="bukaMateri('semaphore')">
+            <div class="emoji">🚩</div>
+            <h3>Semaphore</h3>
+            <p>Isyarat menggunakan bendera</p>
+        </div>
+
+        <div class="card" onclick="bukaMateri('tali')">
+            <div class="emoji">🪢</div>
+            <h3>Tali-temali</h3>
+            <p>Simpul dan ikatan</p>
+        </div>
+
+        <div class="card" onclick="bukaMateri('sejarah')">
+            <div class="emoji">📜</div>
+            <h3>Sejarah Pramuka</h3>
+            <p>Kenali sejarah kepramukaan</p>
+        </div>
+
+    </section>
+
+    <section id="halamanMateri" style="display:none; margin-top:25px;">
+        <div class="welcome">
+            <button onclick="tutupMateri()" style="
+                background:#173d2b;
+                color:white;
+                border:0;
+                padding:10px 17px;
+                border-radius:9px;
+                margin-bottom:18px;
+            ">← Kembali</button>
+
+            <h2 id="judulMateri">Materi</h2>
+            <p id="isiMateri" style="margin-top:12px;"></p>
+        </div>
+    </section>
+
+    <h2 class="section-title">Tentang Aplikasi</h2>
+
+    <section class="welcome">
+        <h2>🌲 Scout Academy</h2>
+        <p>
+            Aplikasi pembelajaran Pramuka untuk mengenal
+            pengetahuan, keterampilan, dan nilai-nilai
+            kepramukaan dengan cara yang lebih menarik.
+        </p>
+    </section>
+
+</main>
+<script>
+
+const dataMateri = {
+    sku: {
+        judul: "📘 Syarat Kecakapan Umum (SKU)",
+        isi: `
+        SKU adalah syarat kecakapan yang wajib dipenuhi
+        oleh anggota Pramuka untuk memperoleh Tanda
+        Kecakapan Umum (TKU).
+
+        <br><br><b>Tujuan SKU:</b>
+        <br>• Mengembangkan pengetahuan.
+        <br>• Melatih keterampilan.
+        <br>• Membentuk karakter mandiri.
+        <br>• Menanamkan sikap disiplin dan tanggung jawab.
+        `
+    },
+
+    skk: {
+        judul: "🏅 Syarat Kecakapan Khusus (SKK)",
+        isi: `
+        SKK merupakan syarat kecakapan berdasarkan
+        keterampilan khusus yang diminati dan dikuasai
+        oleh anggota Pramuka.
+
+        <br><br><b>Contoh bidang SKK:</b>
+        <br>• Pertolongan pertama.
+        <br>• Memasak.
+        <br>• Berkebun.
+        <br>• Pengamatan.
+        <br>• Kerajinan tangan.
+        `
+    },
+
+    sandi: {
+        judul: "🔐 Sandi Pramuka",
+        isi: `
+        Sandi adalah cara menyampaikan pesan menggunakan
+        kode atau simbol tertentu.
+
+        <br><br><b>Contoh sandi:</b>
+        <br>• Sandi Morse.
+        <br>• Sandi kotak.
+        <br>• Sandi angka.
+        <br>• Sandi rumput.
+        `
+    },
+
+    semaphore: {
+        judul: "🚩 Semaphore",
+        isi: `
+        Semaphore adalah metode komunikasi menggunakan
+        dua bendera untuk menyampaikan huruf dan pesan.
+
+        <br><br>Semaphore sering dipelajari dalam kegiatan
+        kepramukaan untuk melatih konsentrasi,
+        ketelitian, dan kerja sama.
+        `
+    },
+
+    tali: {
+        judul: "🪢 Tali-temali",
+        isi: `
+        Tali-temali adalah keterampilan menggunakan tali
+        untuk membuat simpul dan ikatan.
+
+        <br><br><b>Contoh simpul:</b>
+        <br>• Simpul mati.
+        <br>• Simpul hidup.
+        <br>• Simpul pangkal.
+        <br>• Simpul jangkar.
+        <br>• Simpul anyam.
+        `
+    },
+
+    sejarah: {
+        judul: "📜 Sejarah Pramuka",
+        isi: `
+        Gerakan kepanduan modern dipelopori oleh
+        Robert Baden-Powell dari Inggris.
+
+        <br><br>Di Indonesia, Gerakan Pramuka resmi
+        diperkenalkan pada 14 Agustus 1961.
+        Tanggal tersebut diperingati sebagai
+        Hari Pramuka Indonesia.
+        `
+    }
+};
+
+function bukaMateri(nama) {
+    const materi = dataMateri[nama];
+
+    if (!materi) return;
+
+    document.getElementById("judulMateri").innerHTML =
+        materi.judul;
+
+    document.getElementById("isiMateri").innerHTML =
+        materi.isi;
+
+    document.getElementById("halamanMateri").style.display =
+        "block";
+
+    document.getElementById("halamanMateri").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function tutupMateri() {
+    document.getElementById("halamanMateri").style.display =
+        "none";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+</script>
+<style>
+.quiz-box {
+    background: white;
+    padding: 18px;
+    border-radius: 17px;
+    margin-top: 15px;
+}
+
+.quiz-box button {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    margin-top: 10px;
+    border: 1px solid #dce6dc;
+    border-radius: 10px;
+    background: #f5f8f4;
+    color: #203326;
+    text-align: left;
+    font-size: 14px;
+}
+
+.quiz-box button:active {
+    background: #dcebdd;
+}
+
+#hasilKuis {
+    margin-top: 15px;
+    font-weight: bold;
+}
+</style>
+
+<section class="container">
+    <h2 class="section-title">📝 Kuis Pramuka</h2>
+
+    <div class="quiz-box">
+        <h3 id="pertanyaan">Pertanyaan akan muncul di sini</h3>
+
+        <div id="pilihanKuis"></div>
+
+        <p id="hasilKuis"></p>
+
+        <button id="tombolLanjut"
+            onclick="lanjutKuis()"
+            style="background:#173d2b;color:white;text-align:center;">
+            Mulai Kuis
+        </button>
+    </div>
+</section>
+
+<script>
+const soalKuis = [
+    {
+        tanya: "Kapan Hari Pramuka Indonesia diperingati?",
+        pilihan: ["14 Agustus", "17 Agustus", "10 November", "2 Mei"],
+        benar: 0
+    },
+    {
+        tanya: "Siapa pendiri gerakan kepanduan dunia?",
+        pilihan: ["Soekarno", "Baden-Powell", "Ki Hajar Dewantara", "Mohammad Hatta"],
+        benar: 1
+    },
+    {
+        tanya: "Apa lambang Gerakan Pramuka Indonesia?",
+        pilihan: ["Bintang", "Padi", "Tunas kelapa", "Pohon beringin"],
+        benar: 2
+    },
+    {
+        tanya: "Apa kepanjangan dari SKU?",
+        pilihan: [
+            "Syarat Kecakapan Umum",
+            "Sistem Kegiatan Umum",
+            "Satuan Karya Umum",
+            "Syarat Kegiatan Utama"
+        ],
+        benar: 0
+    },
+    {
+        tanya: "Semaphore menggunakan alat apa?",
+        pilihan: ["Peluit", "Dua bendera", "Tongkat", "Kompas"],
+        benar: 1
+    }
+];
+
+let nomorSoal = -1;
+let skorKuis = 0;
+let sudahMenjawab = false;
+
+function lanjutKuis() {
+    if (nomorSoal >= 0 && !sudahMenjawab) return;
+
+    nomorSoal++;
+
+    if (nomorSoal >= soalKuis.length) {
+        document.getElementById("pertanyaan").innerText =
+            "Kuis selesai!";
+
+        document.getElementById("pilihanKuis").innerHTML = "";
+
+        document.getElementById("hasilKuis").innerText =
+            "Nilai kamu: " + (skorKuis * 20) + "/100";
+
+        document.getElementById("tombolLanjut").innerText =
+            "Ulangi Kuis";
+
+        nomorSoal = -1;
+        skorKuis = 0;
+        sudahMenjawab = true;
+        return;
+    }
+
+    sudahMenjawab = false;
+
+    const soal = soalKuis[nomorSoal];
+
+    document.getElementById("pertanyaan").innerText =
+        (nomorSoal + 1) + ". " + soal.tanya;
+
+    document.getElementById("hasilKuis").innerText = "";
+
+    document.getElementById("tombolLanjut").innerText =
+        "Soal Berikutnya";
+
+    const pilihan = document.getElementById("pilihanKuis");
+
+    pilihan.innerHTML = "";
+
+    soal.pilihan.forEach((jawaban, index) => {
+        const tombol = document.createElement("button");
+
+        tombol.innerText = jawaban;
+
+        tombol.onclick = function() {
+            if (sudahMenjawab) return;
+
+            sudahMenjawab = true;
+
+            if (index === soal.benar) {
+                skorKuis++;
+                document.getElementById("hasilKuis").innerText =
+                    "Benar! Jawaban kamu tepat.";
+            } else {
+                document.getElementById("hasilKuis").innerText =
+                    "Belum tepat. Tetap semangat belajar!";
+            }
+        };
+
+        pilihan.appendChild(tombol);
+    });
+}
+</script>
+<style>
+.profil-box {
+    background: white;
+    padding: 18px;
+    border-radius: 17px;
+    margin-top: 15px;
+}
+
+.profil-box input,
+.profil-box select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: 1px solid #dce6dc;
+    border-radius: 10px;
+    background: #f7faf6;
+    font-size: 14px;
+}
+
+.profil-box button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #173d2b;
+    color: white;
+    font-weight: bold;
+}
+
+.progress-bg {
+    height: 12px;
+    background: #e5ece5;
+    border-radius: 20px;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #398653;
+    transition: width .3s;
+}
+
+.profil-info {
+    margin-top: 15px;
+    line-height: 1.8;
+    font-size: 14px;
+}
+</style>
+
+<section class="container">
+    <h2 class="section-title">👤 Profil Anggota</h2>
+
+    <div class="profil-box">
+        <h3>Identitas Pramuka</h3>
+
+        <input
+            type="text"
+            id="namaAnggota"
+            placeholder="Masukkan nama kamu"
+        >
+
+        <select id="golonganAnggota">
+            <option value="">Pilih golongan</option>
+            <option value="Siaga">Siaga</option>
+            <option value="Penggalang">Penggalang</option>
+            <option value="Penegak">Penegak</option>
+            <option value="Pandega">Pandega</option>
+        </select>
+
+        <button onclick="simpanProfil()">
+            Simpan Profil
+        </button>
+
+        <div class="profil-info" id="informasiProfil">
+            Belum ada profil yang disimpan.
+        </div>
+    </div>
+
+    <h2 class="section-title">📊 Progres Belajar</h2>
+
+    <div class="profil-box">
+        <h3>Perkembangan Materi</h3>
+
+        <p style="font-size:13px;margin-top:10px;">
+            Materi yang sudah kamu pelajari:
+            <b id="jumlahMateri">0/6</b>
+        </p>
+
+        <div class="progress-bg">
+            <div class="progress-fill" id="barProgres"></div>
+        </div>
+
+        <p id="persenProgres"
+            style="font-size:13px;margin-top:10px;">
+            0% selesai
+        </p>
+    </div>
+</section>
+
+<script>
+function simpanProfil() {
+    const nama = document.getElementById("namaAnggota").value.trim();
+    const golongan = document.getElementById("golonganAnggota").value;
+
+    if (!nama || !golongan) {
+        alert("Isi nama dan pilih golongan terlebih dahulu!");
+        return;
+    }
+
+    localStorage.setItem("scoutNama", nama);
+    localStorage.setItem("scoutGolongan", golongan);
+
+    tampilkanProfil();
+}
+
+function tampilkanProfil() {
+    const nama = localStorage.getItem("scoutNama");
+    const golongan = localStorage.getItem("scoutGolongan");
+
+    if (nama && golongan) {
+        document.getElementById("namaAnggota").value = nama;
+        document.getElementById("golonganAnggota").value = golongan;
+
+        document.getElementById("informasiProfil").innerHTML =
+            "<b>Nama:</b> " + nama +
+            "<br><b>Golongan:</b> " + golongan;
+    }
+}
+
+let materiSelesai = [];
+
+function perbaruiProgres() {
+    const jumlah = materiSelesai.length;
+    const persen = Math.round((jumlah / 6) * 100);
+
+    document.getElementById("jumlahMateri").innerText =
+        jumlah + "/6";
+
+    document.getElementById("barProgres").style.width =
+        persen + "%";
+
+    document.getElementById("persenProgres").innerText =
+        persen + "% selesai";
+}
+
+const fungsiBukaMateriLama = bukaMateri;
+
+bukaMateri = function(nama) {
+    fungsiBukaMateriLama(nama);
+
+    if (!materiSelesai.includes(nama)) {
+        materiSelesai.push(nama);
+        perbaruiProgres();
+    }
+};
+
+tampilkanProfil();
+perbaruiProgres();
+</script>
+<style>
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 5px;
+    box-shadow: 0 -3px 15px #00000012;
+    z-index: 1000;
+}
+
+.nav-item {
+    border: none;
+    background: none;
+    color: #758278;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-item span {
+    font-size: 21px;
+}
+
+.nav-item.active {
+    color: #17633b;
+    font-weight: bold;
+}
+
+body {
+    padding-bottom: 80px;
+}
+</style>
+
+<nav class="bottom-nav">
+    <button class="nav-item active" onclick="keBagian('beranda', this)">
+        <span>🏠</span>
+        Beranda
+    </button>
+
+    <button class="nav-item" onclick="keBagian('belajar', this)">
+        <span>📚</span>
+        Belajar
+    </button>
+
+    <button class="nav-item" onclick="keBagian('kuis', this)">
+        <span>📝</span>
+        Kuis
+    </button>
+
+    <button class="nav-item" onclick="keBagian('profil', this)">
+        <span>👤</span>
+        Profil
+    </button>
+</nav>
+
+<script>
+function keBagian(tujuan, tombol) {
+    let target = null;
+
+    if (tujuan === "beranda") {
+        target = document.querySelector("header");
+    }
+
+    if (tujuan === "belajar") {
+        target = document.querySelectorAll(".section-title")[1];
+    }
+
+    if (tujuan === "kuis") {
+        target = document.querySelector(".quiz-box");
+    }
+
+    if (tujuan === "profil") {
+        target = document.getElementById("namaAnggota");
+    }
+
+    if (target) {
+        target.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
+
+    document.querySelectorAll(".nav-item").forEach(item => {
+        item.classList.remove("active");
+    });
+
+    tombol.classList.add("active");
+}
+</script>
+<script>
+// SIMPAN PROGRES MATERI
+let materiTersimpan = JSON.parse(
+    localStorage.getItem("scoutMateri") || "[]"
+);
+
+// SIMPAN HASIL KUIS
+let nilaiTersimpan = Number(
+    localStorage.getItem("scoutNilai") || 0
+);
+
+// PERBARUI PROGRES MATERI
+function perbaruiProgres() {
+    const jumlah = materiTersimpan.length;
+    const persen = Math.round((jumlah / 6) * 100);
+
+    document.getElementById("jumlahMateri").innerText =
+        jumlah + "/6";
+
+    document.getElementById("barProgres").style.width =
+        persen + "%";
+
+    document.getElementById("persenProgres").innerText =
+        persen + "% selesai";
+}
+
+// GANTI FUNGSI PEMBUKA MATERI
+const bukaMateriSebelumnya = bukaMateri;
+
+bukaMateri = function(nama) {
+    bukaMateriSebelumnya(nama);
+
+    if (!materiTersimpan.includes(nama)) {
+        materiTersimpan.push(nama);
+
+        localStorage.setItem(
+            "scoutMateri",
+            JSON.stringify(materiTersimpan)
+        );
+
+        perbaruiProgres();
+    }
+};
+
+// SIMPAN NILAI KUIS
+const lanjutKuisSebelumnya = lanjutKuis;
+
+lanjutKuis = function() {
+    lanjutKuisSebelumnya();
+
+    if (nomorSoal === -1 && sudahMenjawab) {
+        nilaiTersimpan = skorKuis * 20;
+
+        localStorage.setItem(
+            "scoutNilai",
+            nilaiTersimpan
+        );
+    }
+};
+
+// TAMPILKAN PROGRES SAAT APLIKASI DIBUKA
+perbaruiProgres();
+</script>
+<style>
+.search-box {
+    background: white;
+    padding: 16px;
+    border-radius: 16px;
+    margin-top: 18px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce6dc;
+    border-radius: 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+.search-result {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #53665a;
+}
+
+.search-result button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #e0e9df;
+    background: #f7faf6;
+    border-radius: 10px;
+    color: #203326;
+}
+</style>
+
+<section class="container">
+    <h2 class="section-title">🔎 Cari Materi</h2>
+
+    <div class="search-box">
+        <input
+            type="text"
+            id="cariMateri"
+            placeholder="Cari SKU, sandi, semaphore..."
+            oninput="cariMateriPramuka()"
+        >
+
+        <div class="search-result" id="hasilPencarian">
+            Ketik nama materi yang ingin kamu pelajari.
+        </div>
+    </div>
+</section>
+
+<script>
+const daftarPencarian = [
+    {nama: "SKU", id: "sku", deskripsi: "Syarat Kecakapan Umum"},
+    {nama: "SKK", id: "skk", deskripsi: "Syarat Kecakapan Khusus"},
+    {nama: "Sandi Pramuka", id: "sandi", deskripsi: "Mengenal berbagai sandi"},
+    {nama: "Semaphore", id: "semaphore", deskripsi: "Isyarat bendera"},
+    {nama: "Tali-temali", id: "tali", deskripsi: "Simpul dan ikatan"},
+    {nama: "Sejarah Pramuka", id: "sejarah", deskripsi: "Sejarah kepramukaan"}
+];
+
+function cariMateriPramuka() {
+    const kata = document
+        .getElementById("cariMateri")
+        .value.toLowerCase()
+        .trim();
+
+    const hasil = document.getElementById("hasilPencarian");
+
+    if (!kata) {
+        hasil.innerHTML =
+            "Ketik nama materi yang ingin kamu pelajari.";
+        return;
+    }
+
+    const ditemukan = daftarPencarian.filter(item =>
+        (item.nama + " " + item.deskripsi)
+            .toLowerCase()
+            .includes(kata)
+    );
+
+    if (ditemukan.length === 0) {
+        hasil.innerHTML = "Materi tidak ditemukan.";
+        return;
+    }
+
+    hasil.innerHTML = "";
+
+    ditemukan.forEach(item => {
+        const tombol = document.createElement("button");
+
+        tombol.innerHTML =
+            "<b>" + item.nama + "</b><br>" +
+            item.deskripsi;
+
+        tombol.onclick = () => bukaMateri(item.id);
+
+        hasil.appendChild(tombol);
+    });
+}
+</script>
+<style>
+.catatan-box {
+    background: white;
+    padding: 18px;
+    border-radius: 17px;
+    margin-top: 15px;
+}
+
+.catatan-box textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 13px;
+    margin-top: 12px;
+    border: 1px solid #dce6dc;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.catatan-box button {
+    background: #173d2b;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 9px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.catatan-item {
+    background: #f1f6f0;
+    padding: 13px;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+}
+
+.catatan-item button {
+    background: #a43d35;
+    margin-top: 8px;
+}
+</style>
+
+<section class="container">
+    <h2 class="section-title">📓 Buku Catatan</h2>
+
+    <div class="catatan-box">
+        <h3>Catatan Belajarku</h3>
+
+        <textarea
+            id="isiCatatan"
+            placeholder="Tuliskan hal penting yang kamu pelajari..."
+        ></textarea>
+
+        <button onclick="simpanCatatan()">
+            Simpan Catatan
+        </button>
+
+        <div id="daftarCatatan"></div>
+    </div>
+</section>
+
+<script>
+let semuaCatatan = JSON.parse(
+    localStorage.getItem("scoutCatatan") || "[]"
+);
+
+function tampilkanCatatan() {
+    const daftar = document.getElementById("daftarCatatan");
+
+    daftar.innerHTML = "";
+
+    if (semuaCatatan.length === 0) {
+        daftar.innerHTML =
+            "<p style='margin-top:15px;color:#718075;font-size:13px;'>Belum ada catatan.</p>";
+        return;
+    }
+
+    semuaCatatan.forEach((catatan, index) => {
+        const item = document.createElement("div");
+        item.className = "catatan-item";
+
+        const isi = document.createElement("p");
+        isi.textContent = catatan.isi;
+        isi.style.whiteSpace = "pre-wrap";
+
+        const tanggal = document.createElement("small");
+        tanggal.textContent = catatan.tanggal;
+
+        const hapus = document.createElement("button");
+        hapus.textContent = "Hapus Catatan";
+
+        hapus.onclick = function() {
+            semuaCatatan.splice(index, 1);
+
+            localStorage.setItem(
+                "scoutCatatan",
+                JSON.stringify(semuaCatatan)
+            );
+
+            tampilkanCatatan();
+        };
+
+        item.appendChild(isi);
+        item.appendChild(tanggal);
+        item.appendChild(hapus);
+
+        daftar.appendChild(item);
+    });
+}
+
+function simpanCatatan() {
+    const isi = document.getElementById("isiCatatan").value.trim();
+
+    if (!isi) {
+        alert("Catatan masih kosong!");
+        return;
+    }
+
+    semuaCatatan.unshift({
+        isi: isi,
+        tanggal: new Date().toLocaleDateString("id-ID")
+    });
+
+    localStorage.setItem(
+        "scoutCatatan",
+        JSON.stringify(semuaCatatan)
+    );
+
+    document.getElementById("isiCatatan").value = "";
+
+    tampilkanCatatan();
+
+    alert("Catatan berhasil disimpan!");
+}
+
+tampilkanCatatan();
+</script>
+<style>
+.kamus-box {
+    background: white;
+    padding: 18px;
+    border-radius: 17px;
+    margin-top: 15px;
+}
+
+.kamus-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce6dc;
+    border-radius: 10px;
+    margin: 12px 0;
+    font-size: 14px;
+}
+
+.kamus-item {
+    padding: 13px;
+    background: #f2f7f1;
+    border-radius: 10px;
+    margin-top: 9px;
+}
+
+.kamus-item h4 {
+    color: #173d2b;
+    margin-bottom: 5px;
+}
+
+.kamus-item p {
+    color: #68776c;
+    font-size: 13px;
+    line-height: 1.5;
+}
+</style>
+
+<section class="container">
+    <h2 class="section-title">📖 Kamus Pramuka</h2>
+
+    <div class="kamus-box">
+        <input
+            type="text"
+            id="cariIstilah"
+            placeholder="Cari istilah Pramuka..."
+            oninput="filterKamus()"
+        >
+
+        <div id="daftarIstilah"></div>
+    </div>
+</section>
+
+<script>
+const kamusPramuka = [
+    {
+        istilah: "Andalan",
+        arti: "Anggota dewasa yang membantu kepengurusan kwartir."
+    },
+    {
+        istilah: "Bantara",
+        arti: "Tingkat pertama dalam Penegak setelah menyelesaikan syarat yang ditentukan."
+    },
+    {
+        istilah: "Ambalan",
+        arti: "Satuan gerak Pramuka Penegak."
+    },
+    {
+        istilah: "Barung",
+        arti: "Kelompok kecil dalam satuan Pramuka Siaga."
+    },
+    {
+        istilah: "Dewan Ambalan",
+        arti: "Organisasi pengelola kegiatan Pramuka Penegak di ambalan."
+    },
+    {
+        istilah: "Dwisatya",
+        arti: "Janji Pramuka Siaga."
+    },
+    {
+        istilah: "Dwidarma",
+        arti: "Ketentuan moral bagi Pramuka Siaga."
+    },
+    {
+        istilah: "Penggalang",
+        arti: "Golongan Pramuka berusia 11 sampai 15 tahun."
+    },
+    {
+        istilah: "Penegak",
+        arti: "Golongan Pramuka berusia 16 sampai 20 tahun."
+    },
+    {
+        istilah: "Pandega",
+        arti: "Golongan Pramuka berusia 21 sampai 25 tahun."
+    },
+    {
+        istilah: "Pionering",
+        arti: "Keterampilan membuat konstruksi menggunakan tongkat dan tali."
+    },
+    {
+        istilah: "SKU",
+        arti: "Syarat Kecakapan Umum."
+    },
+    {
+        istilah: "SKK",
+        arti: "Syarat Kecakapan Khusus."
+    },
+    {
+        istilah: "TKU",
+        arti: "Tanda Kecakapan Umum."
+    },
+    {
+        istilah: "TKK",
+        arti: "Tanda Kecakapan Khusus."
+    },
+    {
+        istilah: "Trisatya",
+        arti: "Janji Pramuka bagi golongan Penggalang, Penegak, dan Pandega."
+    },
+    {
+        istilah: "Dasa Darma",
+        arti: "Sepuluh ketentuan moral bagi anggota Gerakan Pramuka."
+    }
+];
+
+function tampilkanKamus(data) {
+    const daftar = document.getElementById("daftarIstilah");
+
+    daftar.innerHTML = "";
+
+    if (data.length === 0) {
+        daftar.innerHTML =
+            "<p style='font-size:13px;color:#718075;'>Istilah tidak ditemukan.</p>";
+        return;
+    }
+
+    data.forEach(item => {
+        const kotak = document.createElement("div");
+        kotak.className = "kamus-item";
+
+        const judul = document.createElement("h4");
+        judul.textContent = item.istilah;
+
+        const arti = document.createElement("p");
+        arti.textContent = item.arti;
+
+        kotak.appendChild(judul);
+        kotak.appendChild(arti);
+
+        daftar.appendChild(kotak);
+    });
+}
+
+function filterKamus() {
+    const kata = document
+        .getElementById("cariIstilah")
+        .value.toLowerCase();
+
+    const hasil = kamusPramuka.filter(item =>
+        item.istilah.toLowerCase().includes(kata) ||
+        item.arti.toLowerCase().includes(kata)
+    );
+
+    tampilkanKamus(hasil);
+}
+
+tampilkanKamus(kamusPramuka);
+</script>
+<style>
+.info-card {
+    background: white;
+    border-radius: 16px;
+    padding: 17px;
+    margin-top: 12px;
+    border: 1px solid #e2eae1;
+}
+
+.info-card h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.info-card p {
+    color: #68776c;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.info-card button {
+    margin-top: 12px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 9px;
+    background: #173d2b;
+    color: white;
+}
+</style>
+
+<section class="container">
+    <h2 class="section-title">🌿 Galeri Pengetahuan</h2>
+
+    <div id="galeriPramuka"></div>
+</section>
+
+<script>
+const pengetahuanPramuka = [
+    {
+        judul: "🌴 Lambang Tunas Kelapa",
+        ringkas: "Lambang Gerakan Pramuka Indonesia.",
+        isi: "Tunas kelapa dipilih karena memiliki makna bahwa anggota Pramuka diharapkan menjadi pribadi yang berguna, kuat, mampu beradaptasi, dan dapat tumbuh di berbagai keadaan."
+    },
+    {
+        judul: "⚜️ Salam Pramuka",
+        ringkas: "Salam penghormatan sesama anggota Pramuka.",
+        isi: "Salam Pramuka merupakan bentuk penghormatan, persaudaraan, dan penghargaan antaranggota Gerakan Pramuka."
+    },
+    {
+        judul: "🏕️ Perkemahan",
+        ringkas: "Kegiatan belajar di alam terbuka.",
+        isi: "Perkemahan melatih kemandirian, kerja sama, tanggung jawab, kedisiplinan, dan kepedulian terhadap lingkungan."
+    },
+    {
+        judul: "🧭 Kompas",
+        ringkas: "Alat bantu menentukan arah.",
+        isi: "Kompas merupakan alat navigasi yang menggunakan jarum magnet untuk menunjukkan arah utara magnetis."
+    },
+    {
+        judul: "🔥 Api Unggun",
+        ringkas: "Salah satu kegiatan dalam perkemahan.",
+        isi: "Api unggun dapat menjadi sarana kebersamaan, pertunjukan kreativitas, dan kegiatan refleksi. Pelaksanaannya harus dengan pengawasan pembina dan mengikuti aturan keselamatan."
+    },
+    {
+        judul: "🤝 Dasa Darma",
+        ringkas: "Sepuluh pedoman moral anggota Pramuka.",
+        isi: "Dasa Darma menjadi pedoman sikap anggota Pramuka, seperti takwa kepada Tuhan, cinta alam, kasih sayang sesama manusia, disiplin, berani, dan bertanggung jawab."
+    }
+];
+
+function buatGaleri() {
+    const tempat = document.getElementById("galeriPramuka");
+
+    pengetahuanPramuka.forEach((item, index) => {
+        const kartu = document.createElement("div");
+        kartu.className = "info-card";
+
+        const judul = document.createElement("h3");
+        judul.textContent = item.judul;
+
+        const ringkas = document.createElement("p");
+        ringkas.textContent = item.ringkas;
+
+        const tombol = document.createElement("button");
+        tombol.textContent = "Baca selengkapnya";
+
+        const isi = document.createElement("p");
+        isi.style.display = "none";
+        isi.style.marginTop = "12px";
+        isi.textContent = item.isi;
+
+        tombol.onclick = function() {
+            const terbuka = isi.style.display === "block";
+
+            isi.style.display = terbuka ? "none" : "block";
+            tombol.textContent = terbuka
+                ? "Baca selengkapnya"
+                : "Tutup penjelasan";
+        };
+
+        kartu.appendChild(judul);
+        kartu.appendChild(ringkas);
+        kartu.appendChild(tombol);
+        kartu.appendChild(isi);
+
+        tempat.appendChild(kartu);
+    });
+}
+
+buatGaleri();
+</script>
+<style>
+.tantangan-box {
+    background: linear-gradient(135deg, #173d2b, #286344);
+    color: white;
+    padding: 20px;
+    border-radius: 18px;
+    margin-top: 15px;
+}
+
+.tantangan-box p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.tantangan-box button {
+    background: white;
+    color: #173d2b;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.tantangan-status {
+    background: #e7f2e8;
+    color: #245b35;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 12px;
+    font-size: 13px;
+}
+</style>
+
+<section class="container">
+    <h2 class="section-title">🎯 Tantangan Harian</h2>
+
+    <div class="tantangan-box">
+        <div style="font-size:30px;">🏕️</div>
+
+        <h3 id="judulTantangan">Tantangan Pramuka Hari Ini</h3>
+
+        <p id="isiTantangan"></p>
+
+        <button onclick="selesaikanTantangan()">
+            Tandai Selesai
+        </button>
+    </div>
+
+    <div class="tantangan-status" id="statusTantangan">
+        Tantangan belum diselesaikan.
+    </div>
+</section>
+
+<script>
+const daftarTantangan = [
+    {
+        judul: "Belajar Sandi Morse",
+        isi: "Pelajari kode Morse dan coba hafalkan lima huruf pertama."
+    },
+    {
+        judul: "Mengenal Dasa Darma",
+        isi: "Baca dan pahami isi Dasa Darma Pramuka."
+    },
+    {
+        judul: "Belajar Simpul",
+        isi: "Kenali fungsi simpul mati, simpul hidup, dan simpul pangkal."
+    },
+    {
+        judul: "Mengenal Arah Mata Angin",
+        isi: "Pelajari delapan arah mata angin dan kegunaannya."
+    },
+    {
+        judul: "Belajar Semaphore",
+        isi: "Kenali fungsi semaphore dan pelajari huruf-hurufnya."
+    },
+    {
+        judul: "Peduli Lingkungan",
+        isi: "Lakukan satu kegiatan sederhana untuk menjaga kebersihan lingkungan."
+    },
+    {
+        judul: "Mengenal Sejarah Pramuka",
+        isi: "Pelajari sejarah singkat Gerakan Pramuka Indonesia."
+    }
+];
+
+const tanggalHariIni = new Date().toLocaleDateString("id-ID");
+const nomorTantangan = Math.floor(
+    new Date().setHours(0, 0, 0, 0) / 86400000
+) % daftarTantangan.length;
+
+function tampilkanTantangan() {
+    const tantangan = daftarTantangan[nomorTantangan];
+
+    document.getElementById("judulTantangan").innerText =
+        tantangan.judul;
+
+    document.getElementById("isiTantangan").innerText =
+        tantangan.isi;
+
+    const selesai =
+        localStorage.getItem("tantanganSelesai") === tanggalHariIni;
+
+    document.getElementById("statusTantangan").innerText =
+        selesai
+        ? "✅ Tantangan hari ini sudah diselesaikan!"
+        : "Belum selesai. Semangat belajar!";
+}
+
+function selesaikanTantangan() {
+    localStorage.setItem("tantanganSelesai", tanggalHariIni);
+
+    tampilkanTantangan();
+
+    alert("Tantangan hari ini berhasil ditandai selesai!");
+}
+
+tampilkanTantangan();
+</script>
+<style>
+.jadwal-box {
+  background: #fff;
+  padding: 17px;
+  margin: 15px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #00000012;
+}
+
+.jadwal-box h2 {
+  color: #174b35;
+  margin-bottom: 8px;
+}
+
+.jadwal-form input,
+.jadwal-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 9px;
+  border: 1px solid #ccd8ce;
+  border-radius: 9px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.jadwal-form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 9px;
+  background: #17633f;
+  color: white;
+  font-weight: bold;
+}
+
+.item-jadwal {
+  background: #f0f6f1;
+  border-left: 4px solid #26764d;
+  padding: 13px;
+  margin-top: 12px;
+  border-radius: 9px;
+}
+
+.item-jadwal h3 {
+  margin: 0 0 7px;
+  color: #174b35;
+}
+
+.item-jadwal p {
+  margin: 5px 0;
+  font-size: 13px;
+}
+
+.jadwal-aksi {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.jadwal-aksi button {
+  flex: 1;
+  padding: 9px;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  background: #26764d;
+}
+
+.jadwal-aksi .hapus-jadwal {
+  background: #a33b3b;
+}
+
+.jadwal-selesai {
+  opacity: .65;
+  border-left-color: #888;
+}
+</style>
+
+<section class="jadwal-box" id="jadwalKegiatan">
+  <h2>📅 Jadwal Kegiatan</h2>
+  <p>Catat kegiatan latihan dan agenda Pramuka kamu.</p>
+
+  <div class="jadwal-form">
+    <input id="namaKegiatan" type="text"
+      placeholder="Nama kegiatan">
+
+    <input id="tanggalKegiatan" type="date">
+
+    <input id="lokasiKegiatan" type="text"
+      placeholder="Lokasi kegiatan">
+
+    <textarea id="catatanKegiatan"
+      placeholder="Catatan tambahan (opsional)"></textarea>
+
+    <button onclick="tambahJadwal()">
+      + Tambahkan Jadwal
+    </button>
+  </div>
+
+  <h3 style="margin-top:22px;color:#174b35;">
+    Daftar Agenda
+  </h3>
+
+  <div id="daftarJadwal">
+    Belum ada jadwal kegiatan.
+  </div>
+</section>
+
+<script>
+let dataJadwal = JSON.parse(
+  localStorage.getItem("jadwalPramuka") || "[]"
+);
+
+function simpanJadwal() {
+  localStorage.setItem(
+    "jadwalPramuka",
+    JSON.stringify(dataJadwal)
+  );
+}
+
+function tampilkanJadwal() {
+  const tempat = document.getElementById("daftarJadwal");
+
+  if (dataJadwal.length === 0) {
+    tempat.innerHTML = "Belum ada jadwal kegiatan.";
+    return;
+  }
+
+  tempat.innerHTML = "";
+
+  dataJadwal.forEach((item, index) => {
+    const kartu = document.createElement("div");
+
+    kartu.className = "item-jadwal" +
+      (item.selesai ? " jadwal-selesai" : "");
+
+    const judul = document.createElement("h3");
+    judul.textContent = item.nama;
+
+    const tanggal = document.createElement("p");
+    tanggal.textContent = "📆 " + item.tanggal;
+
+    const lokasi = document.createElement("p");
+    lokasi.textContent = "📍 " + (item.lokasi || "Belum ditentukan");
+
+    const catatan = document.createElement("p");
+    catatan.textContent = "📝 " + (item.catatan || "Tidak ada catatan");
+
+    const status = document.createElement("p");
+    status.textContent = item.selesai
+      ? "Status: Selesai"
+      : "Status: Belum selesai";
+
+    const aksi = document.createElement("div");
+    aksi.className = "jadwal-aksi";
+
+    const tombolSelesai = document.createElement("button");
+    tombolSelesai.textContent = item.selesai
+      ? "Batalkan"
+      : "Tandai Selesai";
+
+    tombolSelesai.onclick = function() {
+      dataJadwal[index].selesai = !dataJadwal[index].selesai;
+      simpanJadwal();
+      tampilkanJadwal();
+    };
+
+    const tombolHapus = document.createElement("button");
+    tombolHapus.textContent = "Hapus";
+    tombolHapus.className = "hapus-jadwal";
+
+    tombolHapus.onclick = function() {
+      dataJadwal.splice(index, 1);
+      simpanJadwal();
+      tampilkanJadwal();
+    };
+
+    aksi.appendChild(tombolSelesai);
+    aksi.appendChild(tombolHapus);
+
+    kartu.appendChild(judul);
+    kartu.appendChild(tanggal);
+    kartu.appendChild(lokasi);
+    kartu.appendChild(catatan);
+    kartu.appendChild(status);
+    kartu.appendChild(aksi);
+
+    tempat.appendChild(kartu);
+  });
+}
+
+function tambahJadwal() {
+  const nama = document.getElementById("namaKegiatan").value.trim();
+  const tanggal = document.getElementById("tanggalKegiatan").value;
+  const lokasi = document.getElementById("lokasiKegiatan").value.trim();
+  const catatan = document.getElementById("catatanKegiatan").value.trim();
+
+  if (!nama || !tanggal) {
+    alert("Isi nama kegiatan dan tanggal terlebih dahulu!");
+    return;
+  }
+
+  dataJadwal.push({
+    nama: nama,
+    tanggal: tanggal,
+    lokasi: lokasi,
+    catatan: catatan,
+    selesai: false
+  });
+
+  simpanJadwal();
+  tampilkanJadwal();
+
+  document.getElementById("namaKegiatan").value = "";
+  document.getElementById("tanggalKegiatan").value = "";
+  document.getElementById("lokasiKegiatan").value = "";
+  document.getElementById("catatanKegiatan").value = "";
+}
+
+tampilkanJadwal();
+</script>
+<style>
+.sku-box {
+  background: white;
+  margin: 15px;
+  padding: 17px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #00000012;
+}
+
+.sku-box h2 {
+  color: #174b35;
+}
+
+.sku-progress {
+  background: #e2e9e3;
+  height: 12px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.sku-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: #278052;
+  transition: width .3s;
+}
+
+.sku-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #f1f6f2;
+  padding: 12px;
+  margin-top: 9px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.sku-item input {
+  width: 18px;
+  height: 18px;
+  accent-color: #26764d;
+  flex-shrink: 0;
+}
+
+.sku-reset {
+  border: none;
+  background: #a33b3b;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-top: 14px;
+}
+</style>
+
+<section class="sku-box" id="checklistSKU">
+  <h2>📋 Checklist SKU</h2>
+  <p>
+    Tandai materi kecakapan yang sudah kamu pelajari.
+    Progres akan tersimpan otomatis.
+  </p>
+
+  <div id="skuJumlah">0 dari 10 selesai</div>
+
+  <div class="sku-progress">
+    <div class="sku-progress-fill" id="skuBar"></div>
+  </div>
+
+  <div id="daftarSKU"></div>
+
+  <button class="sku-reset" onclick="resetSKU()">
+    Reset Checklist
+  </button>
+</section>
+
+<script>
+const materiSKU = [
+  "Mengetahui sejarah Gerakan Pramuka",
+  "Memahami lambang Gerakan Pramuka",
+  "Mengetahui Dasa Darma Pramuka",
+  "Memahami Tri Satya Pramuka",
+  "Mengetahui struktur organisasi Pramuka",
+  "Mengenal macam-macam simpul",
+  "Memahami penggunaan semaphore",
+  "Mengenal sandi-sandi Pramuka",
+  "Memahami tata cara upacara",
+  "Mengetahui isi dan tujuan SKU"
+];
+
+let statusSKU = JSON.parse(
+  localStorage.getItem("statusChecklistSKU") || "[]"
+);
+
+function tampilkanSKU() {
+  const daftar = document.getElementById("daftarSKU");
+  daftar.innerHTML = "";
+
+  materiSKU.forEach((materi, index) => {
+    const label = document.createElement("label");
+    label.className = "sku-item";
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = statusSKU.includes(index);
+
+    checkbox.onchange = function() {
+      if (checkbox.checked) {
+        if (!statusSKU.includes(index)) {
+          statusSKU.push(index);
+        }
+      } else {
+        statusSKU = statusSKU.filter(n => n !== index);
+      }
+
+      localStorage.setItem(
+        "statusChecklistSKU",
+        JSON.stringify(statusSKU)
+      );
+
+      tampilkanSKU();
+    };
+
+    const teks = document.createElement("span");
+    teks.textContent = materi;
+
+    label.appendChild(checkbox);
+    label.appendChild(teks);
+    daftar.appendChild(label);
+  });
+
+  const jumlah = statusSKU.length;
+  const persen = Math.round(
+    jumlah / materiSKU.length * 100
+  );
+
+  document.getElementById("skuJumlah").textContent =
+    jumlah + " dari " + materiSKU.length + " selesai (" + persen + "%)";
+
+  document.getElementById("skuBar").style.width =
+    persen + "%";
+}
+
+function resetSKU() {
+  if (!confirm("Yakin ingin mengulang checklist SKU?")) {
+    return;
+  }
+
+  statusSKU = [];
+
+  localStorage.removeItem("statusChecklistSKU");
+  tampilkanSKU();
+}
+
+tampilkanSKU();
+</script>
+<style>
+.p3k-container {
+  background: white;
+  margin: 15px;
+  padding: 17px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #00000012;
+}
+
+.p3k-container h2 {
+  color: #174b35;
+}
+
+.p3k-card {
+  background: #f0f6f1;
+  padding: 14px;
+  margin-top: 11px;
+  border-radius: 10px;
+  border-left: 4px solid #278052;
+}
+
+.p3k-card h3 {
+  color: #174b35;
+  margin: 0 0 7px;
+}
+
+.p3k-card button {
+  border: none;
+  background: #17633f;
+  color: white;
+  padding: 9px 13px;
+  border-radius: 7px;
+  margin-top: 9px;
+}
+
+.p3k-detail {
+  display: none;
+  background: white;
+  padding: 11px;
+  border-radius: 8px;
+  margin-top: 10px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.p3k-warning {
+  background: #fff4dc;
+  border-left: 4px solid #d99a28;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+</style>
+
+<section class="p3k-container" id="pusatP3K">
+  <h2>🩹 Pusat Pengetahuan P3K</h2>
+  <p>
+    Pelajari pengetahuan dasar pertolongan pertama
+    untuk kegiatan kepramukaan.
+  </p>
+
+  <div class="p3k-card">
+    <h3>1. Pengertian P3K</h3>
+    <p>Dasar pengetahuan pertolongan pertama.</p>
+    <button onclick="bukaP3K(0)">Pelajari</button>
+    <div class="p3k-detail" id="detailP3K0">
+      P3K adalah pertolongan awal yang diberikan kepada
+      seseorang yang mengalami cedera atau kondisi darurat
+      sebelum mendapatkan penanganan tenaga medis.
+    </div>
+  </div>
+
+  <div class="p3k-card">
+    <h3>2. Perlengkapan P3K</h3>
+    <p>Mengenal perlengkapan pertolongan pertama.</p>
+    <button onclick="bukaP3K(1)">Pelajari</button>
+    <div class="p3k-detail" id="detailP3K1">
+      Kotak P3K dapat berisi kasa steril, perban,
+      plester, sarung tangan sekali pakai, dan
+      perlengkapan dasar lainnya. Pastikan isinya
+      sesuai kebutuhan dan belum kedaluwarsa.
+    </div>
+  </div>
+
+  <div class="p3k-card">
+    <h3>3. Luka Ringan</h3>
+    <p>Mengenal penanganan awal luka ringan.</p>
+    <button onclick="bukaP3K(2)">Pelajari</button>
+    <div class="p3k-detail" id="detailP3K2">
+      Untuk luka ringan, bersihkan dengan air bersih
+      mengalir dan tutup menggunakan penutup luka steril.
+      Mintalah bantuan orang dewasa jika luka cukup besar,
+      dalam, atau perdarahannya tidak berhenti.
+    </div>
+  </div>
+
+  <div class="p3k-card">
+    <h3>4. Mimisan</h3>
+    <p>Pengetahuan dasar saat mengalami mimisan.</p>
+    <button onclick="bukaP3K(3)">Pelajari</button>
+    <div class="p3k-detail" id="detailP3K3">
+      Duduk tegak, condongkan tubuh sedikit ke depan,
+      lalu tekan bagian lunak hidung secara terus-menerus.
+      Jangan mendongakkan kepala. Minta bantuan medis
+      jika perdarahan tidak berhenti atau kondisinya berat.
+    </div>
+  </div>
+
+  <div class="p3k-card">
+    <h3>5. Kondisi Darurat</h3>
+    <p>Mengenali kondisi yang membutuhkan bantuan segera.</p>
+    <button onclick="bukaP3K(4)">Pelajari</button>
+    <div class="p3k-detail" id="detailP3K4">
+      Jika seseorang tidak sadar, kesulitan bernapas,
+      mengalami cedera berat, atau kondisinya memburuk,
+      segera panggil bantuan darurat dan beri tahu
+      pembina atau orang dewasa. Jangan memindahkan
+      korban kecuali ada bahaya langsung.
+    </div>
+  </div>
+
+  <div class="p3k-warning">
+    <b>⚠️ Penting:</b> Materi ini hanya pengenalan dasar.
+    Dalam keadaan darurat, segera hubungi layanan medis
+    dan ikuti arahan petugas terlatih.
+  </div>
+</section>
+
+<script>
+function bukaP3K(nomor) {
+  const detail = document.getElementById(
+    "detailP3K" + nomor
+  );
+
+  const sedangTerbuka =
+    detail.style.display === "block";
+
+  document.querySelectorAll(".p3k-detail").forEach(
+    function(item) {
+      item.style.display = "none";
+    }
+  );
+
+  if (!sedangTerbuka) {
+    detail.style.display = "block";
+  }
+}
+</script>
+<style>
+.game-sandi {
+  background: white;
+  margin: 15px;
+  padding: 18px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #00000012;
+}
+
+.game-sandi h2 {
+  color: #174b35;
+}
+
+.sandi-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  background: #edf5ef;
+  padding: 12px;
+  border-radius: 9px;
+  font-weight: bold;
+  color: #174b35;
+}
+
+.sandi-pertanyaan {
+  text-align: center;
+  padding: 22px 10px;
+  margin-top: 13px;
+  background: #f2f6f2;
+  border-radius: 12px;
+}
+
+.sandi-kode {
+  font-size: 27px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  color: #17633f;
+  margin: 15px 0;
+}
+
+.sandi-pilihan {
+  display: grid;
+  gap: 9px;
+  margin-top: 15px;
+}
+
+.sandi-pilihan button,
+.sandi-mulai {
+  border: none;
+  padding: 13px;
+  border-radius: 9px;
+  background: #17633f;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.sandi-pilihan button:disabled {
+  opacity: .65;
+}
+
+.sandi-hasil {
+  margin-top: 13px;
+  padding: 12px;
+  background: #edf5ef;
+  border-radius: 9px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sandi-mulai {
+  width: 100%;
+  margin-top: 15px;
+}
+</style>
+
+<section class="game-sandi" id="gameTebakSandi">
+  <h2>🔐 Game Tebak Sandi</h2>
+  <p>
+    Uji kemampuanmu mengenali sandi dalam permainan
+    pilihan ganda.
+  </p>
+
+  <div class="sandi-info">
+    <span id="sandiNomor">Soal: 0/5</span>
+    <span id="sandiSkor">Skor: 0</span>
+  </div>
+
+  <div class="sandi-pertanyaan">
+    <div id="sandiInstruksi">
+      Tekan tombol mulai untuk bermain.
+    </div>
+
+    <div class="sandi-kode" id="sandiKode">
+      ?
+    </div>
+
+    <div id="sandiPilihan" class="sandi-pilihan"></div>
+  </div>
+
+  <div id="sandiHasil" class="sandi-hasil">
+    Siap menguji kemampuanmu?
+  </div>
+
+  <button class="sandi-mulai" onclick="mulaiGameSandi()">
+    Mulai Permainan
+  </button>
+</section>
+
+<script>
+const soalGameSandi = [
+  {
+    instruksi: "Apa arti sandi Morse berikut?",
+    kode: "...",
+    pilihan: ["A", "S", "O", "T"],
+    benar: "S"
+  },
+  {
+    instruksi: "Apa arti sandi Morse berikut?",
+    kode: "---",
+    pilihan: ["M", "O", "S", "A"],
+    benar: "O"
+  },
+  {
+    instruksi: "Apa arti sandi Morse berikut?",
+    kode: ".-",
+    pilihan: ["B", "A", "N", "R"],
+    benar: "A"
+  },
+  {
+    instruksi: "Apa arti sandi Morse berikut?",
+    kode: "-...",
+    pilihan: ["D", "B", "C", "F"],
+    benar: "B"
+  },
+  {
+    instruksi: "Apa arti sandi Morse berikut?",
+    kode: "-.-",
+    pilihan: ["K", "M", "R", "T"],
+    benar: "K"
+  }
+];
+
+let nomorSandi = 0;
+let skorSandi = 0;
+let gameSandiAktif = false;
+let sudahJawabSandi = false;
+
+function mulaiGameSandi() {
+  nomorSandi = 0;
+  skorSandi = 0;
+  gameSandiAktif = true;
+  sudahJawabSandi = false;
+
+  document.getElementById("sandiHasil").textContent =
+    "Permainan dimulai!";
+
+  tampilSoalSandi();
+}
+
+function tampilSoalSandi() {
+  if (nomorSandi >= soalGameSandi.length) {
+    selesaiGameSandi();
+    return;
+  }
+
+  sudahJawabSandi = false;
+
+  const soal = soalGameSandi[nomorSandi];
+
+  document.getElementById("sandiNomor").textContent =
+    "Soal: " + (nomorSandi + 1) + "/5";
+
+  document.getElementById("sandiSkor").textContent =
+    "Skor: " + skorSandi;
+
+  document.getElementById("sandiInstruksi").textContent =
+    soal.instruksi;
+
+  document.getElementById("sandiKode").textContent =
+    soal.kode;
+
+  const tempat = document.getElementById("sandiPilihan");
+  tempat.innerHTML = "";
+
+  soal.pilihan.forEach(function(jawaban) {
+    const tombol = document.createElement("button");
+
+    tombol.textContent = jawaban;
+
+    tombol.onclick = function() {
+      jawabSandi(jawaban);
+    };
+
+    tempat.appendChild(tombol);
+  });
+}
+
+function jawabSandi(jawaban) {
+  if (!gameSandiAktif || sudahJawabSandi) return;
+
+  sudahJawabSandi = true;
+
+  const benar =
+    soalGameSandi[nomorSandi].benar;
+
+  const tombol =
+    document.querySelectorAll("#sandiPilihan button");
+
+  tombol.forEach(function(item) {
+    item.disabled = true;
+  });
+
+  if (jawaban === benar) {
+    skorSandi += 20;
+
+    document.getElementById("sandiHasil").textContent =
+      "Benar! Kamu mendapatkan 20 poin.";
+  } else {
+    document.getElementById("sandiHasil").textContent =
+      "Belum tepat. Jawaban yang benar: " + benar;
+  }
+
+  document.getElementById("sandiSkor").textContent =
+    "Skor: " + skorSandi;
+
+  nomorSandi++;
+
+  setTimeout(function() {
+    if (nomorSandi < soalGameSandi.length) {
+      tampilSoalSandi();
+    } else {
+      selesaiGameSandi();
+    }
+  }, 1200);
+}
+
+function selesaiGameSandi() {
+  gameSandiAktif = false;
+
+  document.getElementById("sandiNomor").textContent =
+    "Selesai: 5/5";
+
+  document.getElementById("sandiKode").textContent =
+    skorSandi + "/100";
+
+  document.getElementById("sandiInstruksi").textContent =
+    "Permainan telah selesai!";
+
+  document.getElementById("sandiPilihan").innerHTML = "";
+
+  document.getElementById("sandiSkor").textContent =
+    "Skor: " + skorSandi;
+
+  document.getElementById("sandiHasil").textContent =
+    skorSandi === 100
+      ? "Luar biasa! Semua jawaban benar!"
+      : "Bagus! Terus berlatih agar semakin mahir.";
+}
+</script>
+<style>
+.tali-container {
+  background: white;
+  margin: 15px;
+  padding: 17px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #00000012;
+}
+
+.tali-container h2 {
+  color: #174b35;
+}
+
+.tali-card {
+  background: #f0f6f1;
+  padding: 14px;
+  margin-top: 12px;
+  border-radius: 11px;
+  border-left: 4px solid #278052;
+}
+
+.tali-card h3 {
+  color: #174b35;
+  margin: 0 0 7px;
+}
+
+.tali-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.tali-card button {
+  background: #17633f;
+  color: white;
+  border: none;
+  padding: 9px 13px;
+  border-radius: 8px;
+}
+
+.tali-detail {
+  display: none;
+  background: white;
+  padding: 11px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.tali-ilustrasi {
+  background: #e5efe7;
+  padding: 13px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: monospace;
+  font-size: 17px;
+  white-space: pre-line;
+  margin-top: 10px;
+}
+</style>
+
+<section class="tali-container" id="ensiklopediaTali">
+  <h2>🪢 Ensiklopedia Tali-temali</h2>
+  <p>
+    Kenali berbagai simpul dan ikatan yang sering
+    dipelajari dalam kegiatan kepramukaan.
+  </p>
+
+  <div class="tali-card">
+    <h3>1. Simpul Mati</h3>
+    <p>Digunakan untuk menyambung dua tali yang ukurannya sama.</p>
+    <button onclick="bukaTali(0)">Lihat Materi</button>
+    <div class="tali-detail" id="detailTali0">
+      Simpul mati dikenal sebagai simpul untuk mengikat
+      dua ujung tali dengan kuat dalam kondisi yang sesuai.
+      Pelajari bentuknya melalui demonstrasi pembina.
+      <div class="tali-ilustrasi">
+        Tali A ─────┐
+                   ╳
+        Tali B ─────┘
+      </div>
+    </div>
+  </div>
+
+  <div class="tali-card">
+    <h3>2. Simpul Hidup</h3>
+    <p>Simpul yang mudah dilepas kembali.</p>
+    <button onclick="bukaTali(1)">Lihat Materi</button>
+    <div class="tali-detail" id="detailTali1">
+      Simpul hidup digunakan untuk ikatan sementara
+      yang perlu dilepaskan dengan mudah.
+      <div class="tali-ilustrasi">
+        ─────( loop )─────
+      </div>
+    </div>
+  </div>
+
+  <div class="tali-card">
+    <h3>3. Simpul Pangkal</h3>
+    <p>Digunakan sebagai awalan atau akhiran ikatan.</p>
+    <button onclick="bukaTali(2)">Lihat Materi</button>
+    <div class="tali-detail" id="detailTali2">
+      Simpul pangkal sering dikenalkan dalam latihan
+      tali-temali untuk mengikat tali pada tongkat.
+      <div class="tali-ilustrasi">
+        ║ Tongkat
+        ║╲
+        ║ ╲ Tali
+        ║╱
+      </div>
+    </div>
+  </div>
+
+  <div class="tali-card">
+    <h3>4. Simpul Jangkar</h3>
+    <p>Dikenal untuk mengikat tali pada benda berbentuk cincin.</p>
+    <button onclick="bukaTali(3)">Lihat Materi</button>
+    <div class="tali-detail" id="detailTali3">
+      Simpul jangkar merupakan salah satu simpul dasar
+      yang dipelajari dalam keterampilan kepramukaan.
+      <div class="tali-ilustrasi">
+        ( Cincin )
+           ║
+         Tali
+      </div>
+    </div>
+  </div>
+
+  <div class="tali-card">
+    <h3>5. Ikatan Palang</h3>
+    <p>Digunakan untuk mengikat dua tongkat yang bersilangan.</p>
+    <button onclick="bukaTali(4)">Lihat Materi</button>
+    <div class="tali-detail" id="detailTali4">
+      Ikatan palang dipelajari saat membuat konstruksi
+      sederhana dari tongkat. Kekuatan ikatan harus
+      diperiksa oleh pembina sebelum digunakan.
+      <div class="tali-ilustrasi">
+        ───────┼───────
+               │
+               │
+      </div>
+    </div>
+  </div>
+
+  <div class="tali-card">
+    <h3>6. Ikatan Silang</h3>
+    <p>Digunakan pada dua tongkat yang berpotongan.</p>
+    <button onclick="bukaTali(5)">Lihat Materi</button>
+    <div class="tali-detail" id="detailTali5">
+      Ikatan silang merupakan materi pionering.
+      Pelajari penerapannya bersama pembina dan gunakan
+      bahan yang sesuai untuk latihan.
+      <div class="tali-ilustrasi">
+        \       /
+         \     /
+          \   /
+           ╳
+          /   \
+         /     \
+      </div>
+    </div>
+  </div>
+
+  <div class="tali-card">
+    <h3>7. Ikatan Canggah</h3>
+    <p>Dipelajari untuk menyambung tongkat atau kayu.</p>
+    <button onclick="bukaTali(6)">Lihat Materi</button>
+    <div class="tali-detail" id="detailTali6">
+      Ikatan canggah merupakan salah satu materi
+      keterampilan pionering. Bentuk dan penggunaannya
+      perlu dipraktikkan dengan pengawasan pembina.
+    </div>
+  </div>
+</section>
+
+<script>
+function bukaTali(nomor) {
+  const detail = document.getElementById(
+    "detailTali" + nomor
+  );
+
+  const terbuka =
+    detail.style.display === "block";
+
+  document.querySelectorAll(
+    ".tali-detail"
+  ).forEach(function(item) {
+    item.style.display = "none";
+  });
+
+  if (!terbuka) {
+    detail.style.display = "block";
+  }
+}
+</script>
+<style>
+.sema-container {
+  background: white;
+  margin: 15px;
+  padding: 17px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #00000012;
+}
+
+.sema-container h2 {
+  color: #174b35;
+}
+
+.sema-search {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccd8ce;
+  border-radius: 9px;
+  box-sizing: border-box;
+  margin: 12px 0;
+}
+
+.sema-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+}
+
+.sema-card {
+  background: #edf5ef;
+  border-radius: 10px;
+  padding: 12px 5px;
+  text-align: center;
+}
+
+.sema-card strong {
+  display: block;
+  color: #17633f;
+  font-size: 24px;
+}
+
+.sema-card span {
+  display: block;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.sema-card button {
+  margin-top: 8px;
+  border: none;
+  background: #17633f;
+  color: white;
+  padding: 7px;
+  border-radius: 6px;
+}
+
+.sema-detail {
+  display: none;
+  background: #f0f6f1;
+  padding: 13px;
+  border-radius: 9px;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.sema-game {
+  background: #edf5ef;
+  padding: 14px;
+  border-radius: 11px;
+  margin-top: 20px;
+}
+
+.sema-game button {
+  width: 100%;
+  margin-top: 8px;
+  padding: 11px;
+  border: none;
+  border-radius: 8px;
+  background: #17633f;
+  color: white;
+}
+
+.sema-info {
+  background: #fff4dc;
+  padding: 11px;
+  border-radius: 9px;
+  font-size: 13px;
+  margin-top: 15px;
+}
+</style>
+
+<section class="sema-container" id="ensiklopediaSemaphore">
+  <h2>🚩 Ensiklopedia Semaphore</h2>
+  <p>
+    Pelajari alfabet semaphore dan uji kemampuanmu
+    mengenali huruf melalui latihan.
+  </p>
+
+  <input
+    class="sema-search"
+    id="cariSemaphore"
+    type="text"
+    placeholder="Cari huruf A sampai Z..."
+    oninput="filterSemaphore()"
+  >
+
+  <div class="sema-grid" id="daftarSemaphore"></div>
+
+  <div class="sema-detail" id="detailSemaphore">
+    Pilih salah satu huruf untuk melihat informasinya.
+  </div>
+
+  <div class="sema-info">
+    Catatan: semaphore menggunakan dua bendera yang
+    diarahkan ke posisi tertentu untuk menyampaikan pesan.
+    Tampilan ini merupakan katalog belajar sederhana.
+  </div>
+
+  <div class="sema-game">
+    <h3>🎯 Latihan Tebak Huruf</h3>
+    <p id="pertanyaanSemaphore">
+      Tekan mulai untuk memulai latihan.
+    </p>
+
+    <div id="pilihanSemaphore"></div>
+
+    <p id="hasilSemaphore"></p>
+
+    <button onclick="mulaiSemaphore()">
+      Mulai Latihan
+    </button>
+  </div>
+</section>
+
+<script>
+const hurufSemaphore = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+let soalSemaphore = "";
+let skorSemaphore = 0;
+let nomorLatihanSemaphore = 0;
+let latihanAktifSemaphore = false;
+let sudahJawabSemaphore = false;
+
+function tampilSemaphore() {
+  const tempat = document.getElementById("daftarSemaphore");
+  tempat.innerHTML = "";
+
+  hurufSemaphore.forEach(function(huruf) {
+    const kartu = document.createElement("div");
+    kartu.className = "sema-card";
+
+    const judul = document.createElement("strong");
+    judul.textContent = huruf;
+
+    const keterangan = document.createElement("span");
+    keterangan.textContent = "Huruf semaphore";
+
+    const tombol = document.createElement("button");
+    tombol.textContent = "Pelajari";
+
+    tombol.onclick = function() {
+      document.getElementById("detailSemaphore").style.display = "block";
+      document.getElementById("detailSemaphore").textContent =
+        "Huruf " + huruf +
+        " dipelajari melalui posisi kedua bendera semaphore. " +
+        "Gunakan diagram semaphore dari pembina untuk melihat " +
+        "posisi tangan yang benar.";
+    };
+
+    kartu.appendChild(judul);
+    kartu.appendChild(keterangan);
+    kartu.appendChild(tombol);
+
+    tempat.appendChild(kartu);
+  });
+}
+
+function filterSemaphore() {
+  const kata = document.getElementById(
+    "cariSemaphore"
+  ).value.toUpperCase();
+
+  document.querySelectorAll(
+    "#daftarSemaphore .sema-card"
+  ).forEach(function(kartu) {
+    const huruf = kartu.querySelector("strong").textContent;
+    kartu.style.display = huruf.includes(kata) ? "block" : "none";
+  });
+}
+
+function mulaiSemaphore() {
+  skorSemaphore = 0;
+  nomorLatihanSemaphore = 0;
+  latihanAktifSemaphore = true;
+  tampilSoalSemaphore();
+}
+
+function tampilSoalSemaphore() {
+  if (nomorLatihanSemaphore >= 5) {
+    selesaiSemaphore();
+    return;
+  }
+
+  sudahJawabSemaphore = false;
+
+  const semua = [...hurufSemaphore];
+
+  soalSemaphore = semua[
+    Math.floor(Math.random() * semua.length)
+  ];
+
+  document.getElementById("pertanyaanSemaphore").textContent =
+    "Pertanyaan " + (nomorLatihanSemaphore + 1) +
+    " dari 5: Apa huruf yang sedang ditanyakan?";
+
+  const pilihan = [soalSemaphore];
+
+  while (pilihan.length < 4) {
+    const acak = semua[
+      Math.floor(Math.random() * semua.length)
+    ];
+
+    if (!pilihan.includes(acak)) {
+      pilihan.push(acak);
+    }
+  }
+
+  pilihan.sort(function() {
+    return Math.random() - 0.5;
+  });
+
+  const tempat = document.getElementById("pilihanSemaphore");
+  tempat.innerHTML = "";
+
+  pilihan.forEach(function(huruf) {
+    const tombol = document.createElement("button");
+    tombol.textContent = huruf;
+
+    tombol.onclick = function() {
+      jawabSemaphore(huruf);
+    };
+
+    tempat.appendChild(tombol);
+  });
+}
+
+function jawabSemaphore(jawaban) {
+  if (!latihanAktifSemaphore || sudahJawabSemaphore) return;
+
+  sudahJawabSemaphore = true;
+
+  if (jawaban === soalSemaphore) {
+    skorSemaphore += 20;
+    document.getElementById("hasilSemaphore").textContent =
+      "Jawaban benar! +20 poin.";
+  } else {
+    document.getElementById("hasilSemaphore").textContent =
+      "Belum tepat. Jawaban latihan: " + soalSemaphore;
+  }
+
+  document.querySelectorAll(
+    "#pilihanSemaphore button"
+  ).forEach(function(tombol) {
+    tombol.disabled = true;
+  });
+
+  nomorLatihanSemaphore++;
+
+  setTimeout(tampilSoalSemaphore, 1000);
+}
+
+function selesaiSemaphore() {
+  latihanAktifSemaphore = false;
+
+  document.getElementById("pertanyaanSemaphore").textContent =
+    "Latihan selesai!";
+
+  document.getElementById("pilihanSemaphore").innerHTML = "";
+
+  document.getElementById("hasilSemaphore").textContent =
+    "Skor akhir: " + skorSemaphore + "/100";
+}
+
+tampilSemaphore();
+</script>
+<style>
+.morse-container {
+  background: white;
+  margin: 15px;
+  padding: 17px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #00000012;
+}
+
+.morse-container h2 {
+  color: #174b35;
+}
+
+.morse-container textarea {
+  width: 100%;
+  min-height: 90px;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 1px solid #ccd8ce;
+  border-radius: 9px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.morse-container button {
+  border: none;
+  background: #17633f;
+  color: white;
+  padding: 11px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.morse-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.morse-output {
+  background: #edf5ef;
+  padding: 13px;
+  border-radius: 9px;
+  margin-top: 12px;
+  min-height: 45px;
+  overflow-wrap: anywhere;
+  line-height: 1.8;
+}
+
+.morse-table {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  margin-top: 13px;
+}
+
+.morse-letter {
+  text-align: center;
+  padding: 9px 3px;
+  border-radius: 8px;
+  background: #edf5ef;
+  font-size: 13px;
+}
+
+.morse-letter b {
+  display: block;
+  color: #17633f;
+  font-size: 17px;
+}
+</style>
+
+<section class="morse-container" id="penerjemahMorse">
+  <h2>📡 Penerjemah Sandi Morse</h2>
+  <p>
+    Terjemahkan huruf menjadi sandi Morse atau
+    ubah kode Morse menjadi teks biasa.
+  </p>
+
+  <h3>✍️ Teks yang ingin diterjemahkan</h3>
+
+  <textarea
+    id="inputMorse"
+    placeholder="Contoh: AKU ANAK PRAMUKA"
+  ></textarea>
+
+  <div class="morse-actions">
+    <button onclick="teksKeMorse()">
+      Teks → Morse
+    </button>
+
+    <button onclick="morseKeTeks()">
+      Morse → Teks
+    </button>
+  </div>
+
+  <h3>Hasil Terjemahan</h3>
+
+  <div class="morse-output" id="hasilMorse">
+    Hasil akan muncul di sini.
+  </div>
+
+  <button onclick="salinMorse()">
+    📋 Salin Hasil
+  </button>
+
+  <h3 style="margin-top:24px;">📖 Tabel Morse A–Z</h3>
+
+  <div class="morse-table" id="tabelMorse"></div>
+</section>
+
+<script>
+const kamusMorse = {
+  A: ".-",
+  B: "-...",
+  C: "-.-.",
+  D: "-..",
+  E: ".",
+  F: "..-.",
+  G: "--.",
+  H: "....",
+  I: "..",
+  J: ".---",
+  K: "-.-",
+  L: ".-..",
+  M: "--",
+  N: "-.",
+  O: "---",
+  P: ".--.",
+  Q: "--.-",
+  R: ".-.",
+  S: "...",
+  T: "-",
+  U: "..-",
+  V: "...-",
+  W: ".--",
+  X: "-..-",
+  Y: "-.--",
+  Z: "--..",
+  0: "-----",
+  1: ".----",
+  2: "..---",
+  3: "...--",
+  4: "....-",
+  5: ".....",
+  6: "-....",
+  7: "--...",
+  8: "---..",
+  9: "----."
+};
+
+const kebalikanMorse = {};
+
+Object.keys(kamusMorse).forEach(function(huruf) {
+  kebalikanMorse[kamusMorse[huruf]] = huruf;
+});
+
+function teksKeMorse() {
+  const teks = document.getElementById(
+    "inputMorse"
+  ).value.toUpperCase().trim();
+
+  if (!teks) {
+    alert("Masukkan teks terlebih dahulu!");
+    return;
+  }
+
+  const hasil = teks.split("").map(function(huruf) {
+    if (huruf === " ") return "/";
+
+    return kamusMorse[huruf] || "?";
+  }).join(" ");
+
+  document.getElementById("hasilMorse").textContent =
+    hasil;
+}
+
+function morseKeTeks() {
+  const kode = document.getElementById(
+    "inputMorse"
+  ).value.trim();
+
+  if (!kode) {
+    alert("Masukkan kode Morse terlebih dahulu!");
+    return;
+  }
+
+  const hasil = kode.split("/").map(function(kata) {
+    return kata.trim().split(/\s+/).map(function(kodeHuruf) {
+      return kebalikanMorse[kodeHuruf] || "?";
+    }).join("");
+  }).join(" ");
+
+  document.getElementById("hasilMorse").textContent =
+    hasil;
+}
+
+function salinMorse() {
+  const hasil = document.getElementById(
+    "hasilMorse"
+  ).textContent;
+
+  if (hasil === "Hasil akan muncul di sini.") {
+    alert("Belum ada hasil untuk disalin!");
+    return;
+  }
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(hasil).then(function() {
+      alert("Hasil berhasil disalin!");
+    }).catch(function() {
+      alert("Gagal menyalin hasil.");
+    });
+  } else {
+    const area = document.createElement("textarea");
+    area.value = hasil;
+    document.body.appendChild(area);
+    area.select();
+
+    try {
+      document.execCommand("copy");
+      alert("Hasil berhasil disalin!");
+    } catch (error) {
+      alert("Tidak dapat menyalin hasil.");
+    }
+
+    area.remove();
+  }
+}
+
+function tampilTabelMorse() {
+  const tempat = document.getElementById("tabelMorse");
+
+  Object.keys(kamusMorse).forEach(function(huruf) {
+    const kartu = document.createElement("div");
+    kartu.className = "morse-letter";
+
+    const nama = document.createElement("b");
+    nama.textContent = huruf;
+
+    const kode = document.createElement("span");
+    kode.textContent = kamusMorse[huruf];
+
+    kartu.appendChild(nama);
+    kartu.appendChild(kode);
+    tempat.appendChild(kartu);
+  });
+}
+
+tampilTabelMorse();
+</script>
+<style>
+.tokoh-container {
+  background: white;
+  margin: 15px;
+  padding: 17px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #00000012;
+}
+
+.tokoh-container h2 {
+  color: #174b35;
+}
+
+.tokoh-card {
+  display: flex;
+  gap: 12px;
+  background: #f0f6f1;
+  padding: 13px;
+  margin-top: 12px;
+  border-radius: 11px;
+  align-items: flex-start;
+}
+
+.tokoh-icon {
+  width: 55px;
+  height: 55px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #dcebe0;
+  border-radius: 12px;
+  font-size: 27px;
+}
+
+.tokoh-info {
+  flex: 1;
+}
+
+.tokoh-info h3 {
+  color: #174b35;
+  margin: 0 0 5px;
+  font-size: 16px;
+}
+
+.tokoh-info p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 5px 0;
+}
+
+.tokoh-info button {
+  border: none;
+  background: #17633f;
+  color: white;
+  padding: 8px 11px;
+  border-radius: 7px;
+  margin-top: 7px;
+}
+
+.tokoh-detail {
+  display: none;
+  background: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 9px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+</style>
+
+<section class="tokoh-container" id="tokohPramuka">
+  <h2>🌍 Tokoh Pramuka</h2>
+
+  <p>
+    Kenali tokoh-tokoh yang berperan dalam sejarah
+    dan perkembangan Gerakan Pramuka.
+  </p>
+
+  <div class="tokoh-card">
+    <div class="tokoh-icon">🎖️</div>
+    <div class="tokoh-info">
+      <h3>Robert Baden-Powell</h3>
+      <p>Pendiri gerakan kepanduan dunia.</p>
+      <button onclick="bukaTokoh(0)">Baca Biografi</button>
+      <div class="tokoh-detail" id="detailTokoh0">
+        Robert Stephenson Smyth Baden-Powell lahir pada
+        22 Februari 1857 di Inggris. Ia dikenal sebagai
+        tokoh yang memprakarsai gerakan kepanduan modern.
+        Perkemahan percobaannya di Pulau Brownsea pada
+        1907 menjadi salah satu tonggak sejarah kepanduan.
+      </div>
+    </div>
+  </div>
+
+  <div class="tokoh-card">
+    <div class="tokoh-icon">📚</div>
+    <div class="tokoh-info">
+      <h3>Olave Baden-Powell</h3>
+      <p>Tokoh penting dalam gerakan kepanduan putri.</p>
+      <button onclick="bukaTokoh(1)">Baca Biografi</button>
+      <div class="tokoh-detail" id="detailTokoh1">
+        Olave Baden-Powell lahir pada 22 Februari 1889.
+        Ia berperan besar dalam perkembangan gerakan
+        kepanduan putri dan menjadi Chief Guide dunia.
+      </div>
+    </div>
+  </div>
+
+  <div class="tokoh-card">
+    <div class="tokoh-icon">🇮🇩</div>
+    <div class="tokoh-info">
+      <h3>Sri Sultan Hamengkubuwono IX</h3>
+      <p>Bapak Pramuka Indonesia.</p>
+      <button onclick="bukaTokoh(2)">Baca Biografi</button>
+      <div class="tokoh-detail" id="detailTokoh2">
+        Sri Sultan Hamengkubuwono IX lahir pada
+        12 April 1912. Ia menjadi tokoh penting dalam
+        pembentukan Gerakan Pramuka Indonesia dan
+        menjabat sebagai Ketua Kwartir Nasional pertama.
+        Ia dikenal sebagai Bapak Pramuka Indonesia.
+      </div>
+    </div>
+  </div>
+
+  <div class="tokoh-card">
+    <div class="tokoh-icon">🏕️</div>
+    <div class="tokoh-info">
+      <h3>Soekarno</h3>
+      <p>Presiden pertama Republik Indonesia.</p>
+      <button onclick="bukaTokoh(3)">Baca Biografi</button>
+      <div class="tokoh-detail" id="detailTokoh3">
+        Presiden Soekarno berperan dalam penyatuan
+        berbagai organisasi kepanduan di Indonesia.
+        Pada 9 Maret 1961, ia memperkenalkan gagasan
+        pembentukan Gerakan Pramuka sebagai organisasi
+        kepanduan nasional.
+      </div>
+    </div>
+  </div>
+
+  <div class="tokoh-card">
+    <div class="tokoh-icon">📜</div>
+    <div class="tokoh-info">
+      <h3>Azrul Azwar</h3>
+      <p>Tokoh Gerakan Pramuka Indonesia.</p>
+      <button onclick="bukaTokoh(4)">Baca Biografi</button>
+      <div class="tokoh-detail" id="detailTokoh4">
+        Azrul Azwar dikenal sebagai tokoh pendidikan
+        dan kepramukaan Indonesia. Ia pernah menjabat
+        sebagai Ketua Kwartir Nasional Gerakan Pramuka
+        periode 2003–2013.
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function bukaTokoh(nomor) {
+  const detail = document.getElementById(
+    "detailTokoh" + nomor
+  );
+
+  const terbuka = detail.style.display === "block";
+
+  document.querySelectorAll(".tokoh-detail").forEach(
+    function(item) {
+      item.style.display = "none";
+    }
+  );
+
+  if (!terbuka) {
+    detail.style.display = "block";
+  }
+}
+</script>
+<style>
+.level-container {
+  background: white;
+  margin: 15px;
+  padding: 17px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px #00000012;
+}
+
+.level-container h2 {
+  color: #174b35;
+}
+
+.level-card {
+  background: #f0f6f1;
+  padding: 15px;
+  margin-top: 12px;
+  border-radius: 11px;
+  border-left: 5px solid #278052;
+}
+
+.level-card h3 {
+  color: #174b35;
+  margin: 0 0 7px;
+}
+
+.level-card p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.level-card button {
+  border: none;
+  background: #17633f;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+}
+
+.level-card button:disabled {
+  background: #999;
+}
+
+.level-detail {
+  display: none;
+  background: white;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.level-progress {
+  height: 12px;
+  background: #e2e9e3;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.level-progress-fill {
+  width: 0%;
+  height: 100%;
+  background: #278052;
+  transition: width .3s;
+}
+</style>
+
+<section class="level-container" id="levelBelajar">
+  <h2>🏆 Level Belajar</h2>
+  <p>
+    Selesaikan setiap level untuk mengembangkan
+    pengetahuan kepramukaanmu.
+  </p>
+
+  <div id="levelJumlah">0 dari 4 level selesai</div>
+
+  <div class="level-progress">
+    <div class="level-progress-fill" id="levelBar"></div>
+  </div>
+
+  <div class="level-card">
+    <h3>🌱 Level 1: Pemula</h3>
+    <p>Belajar dasar-dasar kepramukaan.</p>
+    <button onclick="bukaLevel(0)">Buka Materi</button>
+    <div class="level-detail" id="isiLevel0">
+      <b>Materi:</b>
+      <ul>
+        <li>Sejarah Pramuka</li>
+        <li>Lambang Tunas Kelapa</li>
+        <li>Tri Satya</li>
+        <li>Dasa Darma</li>
+      </ul>
+      <button onclick="selesaiLevel(0)">Tandai Selesai</button>
+    </div>
+  </div>
+
+  <div class="level-card">
+    <h3>🌿 Level 2: Terampil</h3>
+    <p>Kenali keterampilan dasar Pramuka.</p>
+    <button onclick="bukaLevel(1)" id="tombolLevel1">Buka Materi</button>
+    <div class="level-detail" id="isiLevel1">
+      <b>Materi:</b>
+      <ul>
+        <li>Sandi Morse</li>
+        <li>Semaphore</li>
+        <li>Tali-temali</li>
+        <li>Kompas dan arah mata angin</li>
+      </ul>
+      <button onclick="selesaiLevel(1)">Tandai Selesai</button>
+    </div>
+  </div>
+
+  <div class="level-card">
+    <h3>🔥 Level 3: Mahir</h3>
+    <p>Pelajari pengetahuan dan keterampilan lanjutan.</p>
+    <button onclick="bukaLevel(2)" id="tombolLevel2">Buka Materi</button>
+    <div class="level-detail" id="isiLevel2">
+      <b>Materi:</b>
+      <ul>
+        <li>Pertolongan pertama</li>
+        <li>Pionering dasar</li>
+        <li>Perencanaan perkemahan</li>
+        <li>Kepemimpinan regu</li>
+      </ul>
+      <button onclick="selesaiLevel(2)">Tandai Selesai</button>
+    </div>
+  </div>
+
+  <div class="level-card">
+    <h3>⭐ Level 4: Master Scout</h3>
+    <p>Uji pengetahuan dan kemampuanmu.</p>
+    <button onclick="bukaLevel(3)" id="tombolLevel3">Buka Materi</button>
+    <div class="level-detail" id="isiLevel3">
+      <b>Materi:</b>
+      <ul>
+        <li>Sejarah kepanduan dunia</li>
+        <li>Organisasi Gerakan Pramuka</li>
+        <li>Pengamalan Dasa Darma</li>
+        <li>Evaluasi seluruh materi</li>
+      </ul>
+      <button onclick="selesaiLevel(3)">Tandai Selesai</button>
+    </div>
+  </div>
+</section>
+
+<script>
+let levelSelesai = JSON.parse(
+  localStorage.getItem("levelScout") || "[]"
+);
+
+function bukaLevel(nomor) {
+  if (nomor > 0 && !levelSelesai.includes(nomor - 1)) {
+    alert("Selesaikan level sebelumnya terlebih dahulu!");
+    return;
+  }
+
+  const detail = document.getElementById(
+    "isiLevel" + nomor
+  );
+
+  detail.style.display =
+    detail.style.display === "block" ? "none" : "block";
+}
+
+function selesaiLevel(nomor) {
+  if (nomor > 0 && !levelSelesai.includes(nomor - 1)) {
+    alert("Selesaikan level sebelumnya terlebih dahulu!");
+    return;
+  }
+
+  if (!levelSelesai.includes(nomor)) {
+    levelSelesai.push(nomor);
+  }
+
+  localStorage.setItem(
+    "levelScout",
+    JSON.stringify(levelSelesai)
+  );
+
+  tampilLevel();
+
+  alert("Level berhasil diselesaikan!");
+}
+
+function tampilLevel() {
+  const jumlah = levelSelesai.length;
+  const persen = jumlah / 4 * 100;
+
+  document.getElementById("levelJumlah").textContent =
+    jumlah + " dari 4 level selesai";
+
+  document.getElementById("levelBar").style.width =
+    persen + "%";
+
+  for (let i = 0; i < 4; i++) {
+    const tombol = document.querySelector(
+      "#levelBelajar .level-card:nth-of-type(" + (i + 2) + ") button"
+    );
+
+    if (tombol && i > 0) {
+      tombol.disabled = !levelSelesai.includes(i - 1);
+    }
+  }
+}
+
+tampilLevel();
+</script>
+<style>
+#roomScout {
+  padding:20px;
+  margin:20px 12px 100px;
+  background:#102b22;
+  color:white;
+  border-radius:18px;
+}
+#roomScout input, #roomScout textarea {
+  width:100%;
+  padding:12px;
+  margin:7px 0;
+  border-radius:9px;
+  border:1px solid #527565;
+  box-sizing:border-box;
+}
+#roomScout button {
+  padding:11px 14px;
+  margin:5px 3px;
+  border:0;
+  border-radius:9px;
+  background:#b5dfbd;
+  color:#123326;
+  font-weight:bold;
+}
+.room-kartu {
+  background:#204536;
+  padding:14px;
+  border-radius:12px;
+  margin:12px 0;
+}
+.room-kartu small {
+  color:#c3dfce;
+}
+</style>
+
+<section id="roomScout">
+  <h2>👥 SCOUT COMMUNITY</h2>
+  <p>Ruang belajar dan bekerja sama anggota Pramuka.</p>
+
+  <div class="room-kartu">
+    <h3>Profil Anggota</h3>
+    <input id="namaScout" placeholder="Masukkan nama kamu">
+    <button onclick="simpanNamaScout()">Simpan Nama</button>
+    <p id="statusNamaScout">Belum mengatur nama.</p>
+  </div>
+
+  <div class="room-kartu">
+    <h3>➕ Buat Room</h3>
+    <input id="namaRoomBaru" placeholder="Nama kelompok">
+    <textarea id="deskripsiRoomBaru"
+      placeholder="Deskripsi kelompok"></textarea>
+    <button onclick="buatRoomScout()">Buat Kelompok</button>
+  </div>
+
+  <div class="room-kartu">
+    <h3>📨 Undangan Saya</h3>
+    <div id="daftarUndanganScout">
+      Belum ada undangan.
+    </div>
+  </div>
+
+  <h3>🏕️ Room Saya</h3>
+  <div id="daftarRoomScout">
+    Belum ada kelompok.
+  </div>
+
+  <div id="detailRoomScout"></div>
+</section>
+
+<script>
+let namaAnggotaScout =
+  localStorage.getItem("namaAnggotaScout") || "";
+
+let dataRoomScout =
+  JSON.parse(localStorage.getItem("dataRoomScout") || "[]");
+
+let undanganScout =
+  JSON.parse(localStorage.getItem("undanganScout") || "[]");
+
+let roomAktifScout = null;
+
+function simpanDataRoomScout() {
+  localStorage.setItem(
+    "dataRoomScout",
+    JSON.stringify(dataRoomScout)
+  );
+  localStorage.setItem(
+    "undanganScout",
+    JSON.stringify(undanganScout)
+  );
+}
+
+function simpanNamaScout() {
+  let nama = document
+    .getElementById("namaScout").value.trim();
+
+  if (!nama) {
+    alert("Masukkan nama terlebih dahulu!");
+    return;
+  }
+
+  namaAnggotaScout = nama;
+  localStorage.setItem("namaAnggotaScout", nama);
+
+  tampilkanRoomScout();
+  alert("Nama berhasil disimpan!");
+}
+
+function buatRoomScout() {
+  if (!namaAnggotaScout) {
+    alert("Simpan nama anggota terlebih dahulu!");
+    return;
+  }
+
+  let namaRoom = document
+    .getElementById("namaRoomBaru").value.trim();
+
+  let deskripsi = document
+    .getElementById("deskripsiRoomBaru").value.trim();
+
+  if (!namaRoom) {
+    alert("Nama kelompok belum diisi!");
+    return;
+  }
+
+  let room = {
+    id: Date.now(),
+    nama: namaRoom,
+    deskripsi: deskripsi,
+    ketua: namaAnggotaScout,
+    anggota: [namaAnggotaScout],
+    tugas: []
+  };
+
+  dataRoomScout.push(room);
+  simpanDataRoomScout();
+
+  document.getElementById("namaRoomBaru").value = "";
+  document.getElementById("deskripsiRoomBaru").value = "";
+
+  tampilkanRoomScout();
+  alert("Room berhasil dibuat!");
+}
+
+function tampilkanRoomScout() {
+  document.getElementById("statusNamaScout").innerText =
+    namaAnggotaScout
+      ? "Nama kamu: " + namaAnggotaScout
+      : "Belum mengatur nama.";
+
+  document.getElementById("namaScout").value =
+    namaAnggotaScout;
+
+  let daftar = document.getElementById("daftarRoomScout");
+  daftar.innerHTML = "";
+
+  let milikSaya = dataRoomScout.filter(room =>
+    room.anggota.includes(namaAnggotaScout)
+  );
+
+  if (!milikSaya.length) {
+    daftar.innerHTML = "Kamu belum bergabung dengan room.";
+  }
+
+  milikSaya.forEach(room => {
+    let kartu = document.createElement("div");
+    kartu.className = "room-kartu";
+
+    let judul = document.createElement("h3");
+    judul.textContent = "🏕️ " + room.nama;
+
+    let info = document.createElement("p");
+    info.textContent =
+      "Ketua: " + room.ketua +
+      " | Anggota: " + room.anggota.length;
+
+    let tombol = document.createElement("button");
+    tombol.textContent = "Buka Room";
+    tombol.onclick = () => bukaRoomScout(room.id);
+
+    kartu.append(judul, info, tombol);
+    daftar.appendChild(kartu);
+  });
+
+  tampilkanUndanganScout();
+}
+
+function tampilkanUndanganScout() {
+  let tempat =
+    document.getElementById("daftarUndanganScout");
+
+  tempat.innerHTML = "";
+
+  let milikSaya = undanganScout.filter(item =>
+    item.penerima === namaAnggotaScout &&
+    item.status === "menunggu"
+  );
+
+  if (!milikSaya.length) {
+    tempat.innerText = "Belum ada undangan.";
+    return;
+  }
+
+  milikSaya.forEach(item => {
+    let kartu = document.createElement("div");
+    kartu.className = "room-kartu";
+
+    let judul = document.createElement("p");
+    judul.textContent =
+      item.pengirim + " mengundangmu ke " + item.namaRoom;
+
+    let terima = document.createElement("button");
+    terima.textContent = "Terima";
+    terima.onclick = () => terimaUndanganScout(item.id);
+
+    let tolak = document.createElement("button");
+    tolak.textContent = "Tolak";
+    tolak.onclick = () => tolakUndanganScout(item.id);
+
+    kartu.append(judul, terima, tolak);
+    tempat.appendChild(kartu);
+  });
+}
+
+function bukaRoomScout(id) {
+  let room = dataRoomScout.find(item => item.id === id);
+  if (!room) return;
+
+  roomAktifScout = id;
+
+  let tempat = document.getElementById("detailRoomScout");
+  tempat.innerHTML = "";
+
+  let judul = document.createElement("h3");
+  judul.textContent = "🏕️ " + room.nama;
+
+  let deskripsi = document.createElement("p");
+  deskripsi.textContent = room.deskripsi || "Tanpa deskripsi.";
+
+  let anggota = document.createElement("div");
+  anggota.className = "room-kartu";
+  anggota.innerHTML = "<b>Daftar Anggota</b>";
+
+  room.anggota.forEach(nama => {
+    let baris = document.createElement("p");
+    baris.textContent =
+      (nama === room.ketua ? "👑 " : "👤 ") + nama;
+    anggota.appendChild(baris);
+  });
+
+  tempat.append(judul, deskripsi, anggota);
+
+  if (room.ketua === namaAnggotaScout) {
+    let undang = document.createElement("div");
+    undang.className = "room-kartu";
+    undang.innerHTML = "<h4>Undang Anggota</h4>";
+
+    let input = document.createElement("input");
+    input.placeholder = "Nama teman";
+
+    let tombol = document.createElement("button");
+    tombol.textContent = "Kirim Undangan";
+    tombol.onclick = () => {
+      kirimUndanganScout(id, input.value);
+    };
+
+    undang.append(input, tombol);
+    tempat.appendChild(undang);
+  }
+
+  let tugas = document.createElement("div");
+  tugas.className = "room-kartu";
+  tugas.innerHTML = "<h4>📋 Tugas Kelompok</h4>";
+
+  if (room.ketua === namaAnggotaScout) {
+    let inputTugas = document.createElement("input");
+    inputTugas.placeholder = "Nama tugas";
+
+    let tombolTugas = document.createElement("button");
+    tombolTugas.textContent = "Tambah Tugas";
+
+    tombolTugas.onclick = () => {
+      let namaTugas = inputTugas.value.trim();
+
+      if (!namaTugas) return;
+
+      room.tugas.push({
+        nama: namaTugas,
+        selesai: false
+      });
+
+      simpanDataRoomScout();
+      bukaRoomScout(id);
+    };
+
+    tugas.append(inputTugas, tombolTugas);
+  }
+
+  room.tugas.forEach((item, index) => {
+    let baris = document.createElement("p");
+    baris.textContent =
+      (item.selesai ? "✅ " : "⬜ ") + item.nama;
+
+    let selesai = document.createElement("button");
+    selesai.textContent = item.selesai
+      ? "Batalkan"
+      : "Selesai";
+
+    selesai.onclick = () => {
+      item.selesai = !item.selesai;
+      simpanDataRoomScout();
+      bukaRoomScout(id);
+    };
+
+    baris.appendChild(selesai);
+    tugas.appendChild(baris);
+  });
+
+  tempat.appendChild(tugas);
+}
+
+function kirimUndanganScout(id, penerima) {
+  penerima = penerima.trim();
+
+  if (!penerima) {
+    alert("Masukkan nama teman!");
+    return;
+  }
+
+  if (penerima === namaAnggotaScout) {
+    alert("Kamu tidak bisa mengundang diri sendiri.");
+    return;
+  }
+
+  let room = dataRoomScout.find(item => item.id === id);
+  if (!room) return;
+
+  let sudahAda = undanganScout.some(item =>
+    item.roomId === id &&
+    item.penerima.toLowerCase() === penerima.toLowerCase() &&
+    item.status === "menunggu"
+  );
+
+  if (sudahAda) {
+    alert("Undangan untuk nama tersebut sudah ada.");
+    return;
+  }
+
+  undanganScout.push({
+    id: Date.now(),
+    roomId: id,
+    namaRoom: room.nama,
+    pengirim: namaAnggotaScout,
+    penerima: penerima,
+    status: "menunggu"
+  });
+
+  simpanDataRoomScout();
+  alert("Undangan disimpan!");
+}
+
+function terimaUndanganScout(id) {
+  let undangan = undanganScout.find(item => item.id === id);
+  if (!undangan) return;
+
+  let room = dataRoomScout.find(item =>
+    item.id === undangan.roomId
+  );
+
+  if (room && !room.anggota.includes(namaAnggotaScout)) {
+    room.anggota.push(namaAnggotaScout);
+  }
+
+  undangan.status = "diterima";
+  simpanDataRoomScout();
+  tampilkanRoomScout();
+}
+
+function tolakUndanganScout(id) {
+  let undangan = undanganScout.find(item => item.id === id);
+  if (!undangan) return;
+
+  undangan.status = "ditolak";
+  simpanDataRoomScout();
+  tampilkanRoomScout();
+}
+
+tampilkanRoomScout();
+</script>
+<style>
+#undanganRoom23 {
+  margin:20px 12px;
+  padding:18px;
+  border-radius:16px;
+  background:#173b2d;
+  color:white;
+}
+#undanganRoom23 input,
+#undanganRoom23 textarea {
+  width:100%;
+  box-sizing:border-box;
+  padding:12px;
+  margin:7px 0;
+  border-radius:9px;
+  border:1px solid #789b83;
+}
+#undanganRoom23 button {
+  padding:11px;
+  margin:5px 3px;
+  border:0;
+  border-radius:8px;
+  background:#b9dfbd;
+  color:#173b2d;
+  font-weight:bold;
+}
+</style>
+
+<section id="undanganRoom23">
+  <h2>📨 KODE UNDANGAN ROOM</h2>
+  <p>Buat kode undangan untuk dibagikan kepada temanmu.</p>
+
+  <div class="room-kartu">
+    <h3>Buat Undangan</h3>
+    <input id="kodeRoom23" placeholder="Kode akan muncul di sini" readonly>
+    <button onclick="buatKodeRoom23()">Buat Kode</button>
+    <button onclick="salinKodeRoom23()">Salin Kode</button>
+    <button onclick="bagikanKodeRoom23()">Bagikan</button>
+  </div>
+
+  <div class="room-kartu">
+    <h3>Gabung dengan Kode</h3>
+    <textarea id="masukKodeRoom23"
+      rows="4"
+      placeholder="Tempel kode undangan teman di sini"></textarea>
+    <button onclick="gabungKodeRoom23()">Gabung Room</button>
+  </div>
+
+  <div class="room-kartu">
+    <h3>Informasi</h3>
+    <p id="statusKodeRoom23">
+      Belum ada kode undangan yang dibuat.
+    </p>
+  </div>
+</section>
+
+<script>
+function buatKodeRoom23() {
+  if (!namaAnggotaScout) {
+    alert("Simpan nama anggota terlebih dahulu!");
+    return;
+  }
+
+  let id = roomAktifScout;
+
+  if (!id) {
+    alert("Buka salah satu room milikmu terlebih dahulu!");
+    return;
+  }
+
+  let room = dataRoomScout.find(r => r.id === id);
+
+  if (!room || room.ketua !== namaAnggotaScout) {
+    alert("Hanya ketua room yang bisa membuat undangan.");
+    return;
+  }
+
+  let data = {
+    aplikasi: "SCOUT_ACADEMY_ROOM",
+    versi: 1,
+    nama: room.nama,
+    deskripsi: room.deskripsi,
+    ketua: room.ketua,
+    anggota: room.anggota,
+    tugas: room.tugas
+  };
+
+  let kode = btoa(unescape(encodeURIComponent(
+    JSON.stringify(data)
+  )));
+
+  document.getElementById("kodeRoom23").value = kode;
+
+  document.getElementById("statusKodeRoom23").innerText =
+    "Kode undangan berhasil dibuat untuk room " + room.nama;
+}
+
+function salinKodeRoom23() {
+  let kode = document.getElementById("kodeRoom23").value;
+
+  if (!kode) {
+    alert("Buat kode undangan dahulu!");
+    return;
+  }
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(kode)
+      .then(() => alert("Kode berhasil disalin!"))
+      .catch(() => alert("Salin kode secara manual."));
+  } else {
+    let input = document.getElementById("kodeRoom23");
+    input.select();
+    document.execCommand("copy");
+    alert("Kode disalin jika browser mengizinkan.");
+  }
+}
+
+function bagikanKodeRoom23() {
+  let kode = document.getElementById("kodeRoom23").value;
+
+  if (!kode) {
+    alert("Buat kode undangan dahulu!");
+    return;
+  }
+
+  let pesan =
+    "Kamu diundang ke room SCOUT ACADEMY!\n\n" +
+    "Salin kode berikut dan masukkan di menu Gabung Room:\n\n" +
+    kode;
+
+  if (navigator.share) {
+    navigator.share({
+      title: "Undangan SCOUT ACADEMY",
+      text: pesan
+    }).catch(() => {});
+  } else {
+    salinKodeRoom23();
+  }
+}
+
+function gabungKodeRoom23() {
+  if (!namaAnggotaScout) {
+    alert("Simpan nama anggota terlebih dahulu!");
+    return;
+  }
+
+  let kode = document
+    .getElementById("masukKodeRoom23")
+    .value.trim();
+
+  if (!kode) {
+    alert("Masukkan kode undangan!");
+    return;
+  }
+
+  try {
+    let data = JSON.parse(
+      decodeURIComponent(escape(atob(kode)))
+    );
+
+    if (
+      data.aplikasi !== "SCOUT_ACADEMY_ROOM" ||
+      !data.nama ||
+      !Array.isArray(data.anggota) ||
+      !Array.isArray(data.tugas)
+    ) {
+      throw new Error("Kode tidak sesuai.");
+    }
+
+    let sudahAda = dataRoomScout.some(r =>
+      r.nama === data.nama &&
+      r.ketua === data.ketua
+    );
+
+    if (sudahAda) {
+      alert("Room ini sudah ada di daftar perangkatmu.");
+      return;
+    }
+
+    let roomBaru = {
+      id: Date.now(),
+      nama: data.nama,
+      deskripsi: data.deskripsi || "",
+      ketua: data.ketua,
+      anggota: [...new Set([
+        ...data.anggota,
+        namaAnggotaScout
+      ])],
+      tugas: data.tugas.map(t => ({
+        nama: String(t.nama || "Tugas"),
+        selesai: Boolean(t.selesai)
+      }))
+    };
+
+    dataRoomScout.push(roomBaru);
+    simpanDataRoomScout();
+
+    document.getElementById("masukKodeRoom23").value = "";
+
+    tampilkanRoomScout();
+
+    alert(
+      "Berhasil mengimpor salinan room " +
+      roomBaru.nama + "!"
+    );
+
+  } catch (error) {
+    alert("Kode undangan tidak valid atau rusak.");
+  }
+}
+</script>
+<style>
+#chatScout24 {
+  margin:20px 12px 100px;
+  padding:18px;
+  border-radius:18px;
+  background:#102b22;
+  color:white;
+}
+#chatScout24 .chat-box {
+  background:#204536;
+  padding:12px;
+  border-radius:12px;
+  margin:10px 0;
+}
+#chatScout24 input {
+  width:100%;
+  box-sizing:border-box;
+  padding:12px;
+  border-radius:9px;
+  border:1px solid #789b83;
+  margin:6px 0;
+}
+#chatScout24 button {
+  padding:10px 13px;
+  border:0;
+  border-radius:8px;
+  background:#b9dfbd;
+  color:#173b2d;
+  font-weight:bold;
+  margin:4px;
+}
+#chatScout24 .pesan-scout {
+  background:#315b45;
+  border-radius:12px;
+  padding:10px;
+  margin:8px 0;
+  overflow-wrap:anywhere;
+}
+#chatScout24 .waktu-scout {
+  font-size:11px;
+  color:#c4d9ca;
+}
+</style>
+
+<section id="chatScout24">
+  <h2>💬 CHAT ROOM</h2>
+  <p>Ruang percakapan anggota kelompok.</p>
+
+  <div class="chat-box">
+    <label>Pilih kelompok</label>
+    <select id="pilihChatScout24"
+      style="width:100%;padding:12px;border-radius:8px;"
+      onchange="tampilkanChatScout24()">
+      <option value="">Pilih room</option>
+    </select>
+  </div>
+
+  <div class="chat-box">
+    <h3 id="judulChatScout24">Belum ada room dipilih</h3>
+    <div id="isiChatScout24">
+      Pilih room untuk melihat percakapan.
+    </div>
+  </div>
+
+  <div class="chat-box">
+    <h3>Tulis Pesan</h3>
+    <input id="pesanBaruScout24"
+      placeholder="Tulis pesan untuk kelompok..."
+      maxlength="500">
+    <button onclick="kirimChatScout24()">Kirim Pesan</button>
+  </div>
+</section>
+
+<script>
+let semuaChatScout24 = JSON.parse(
+  localStorage.getItem("semuaChatScout24") || "{}"
+);
+
+function simpanChatScout24() {
+  localStorage.setItem(
+    "semuaChatScout24",
+    JSON.stringify(semuaChatScout24)
+  );
+}
+
+function isiPilihanChatScout24() {
+  let pilih = document.getElementById("pilihChatScout24");
+  if (!pilih) return;
+
+  pilih.innerHTML = '<option value="">Pilih room</option>';
+
+  let milikSaya = dataRoomScout.filter(room =>
+    room.anggota.includes(namaAnggotaScout)
+  );
+
+  milikSaya.forEach(room => {
+    let opsi = document.createElement("option");
+    opsi.value = room.id;
+    opsi.textContent = room.nama;
+    pilih.appendChild(opsi);
+  });
+}
+
+function tampilkanChatScout24() {
+  let id = document.getElementById(
+    "pilihChatScout24"
+  ).value;
+
+  let isi = document.getElementById("isiChatScout24");
+  let judul = document.getElementById("judulChatScout24");
+
+  isi.innerHTML = "";
+
+  if (!id) {
+    judul.textContent = "Belum ada room dipilih";
+    isi.textContent = "Pilih room untuk melihat percakapan.";
+    return;
+  }
+
+  let room = dataRoomScout.find(r => r.id == id);
+
+  if (!room || !room.anggota.includes(namaAnggotaScout)) {
+    isi.textContent = "Room tidak ditemukan.";
+    return;
+  }
+
+  judul.textContent = "💬 " + room.nama;
+
+  let pesan = semuaChatScout24[id] || [];
+
+  if (!pesan.length) {
+    isi.textContent = "Belum ada pesan. Mulai percakapan!";
+    return;
+  }
+
+  pesan.forEach((item, index) => {
+    let kartu = document.createElement("div");
+    kartu.className = "pesan-scout";
+
+    let nama = document.createElement("b");
+    nama.textContent = item.nama;
+
+    let isiPesan = document.createElement("p");
+    isiPesan.textContent = item.teks;
+
+    let waktu = document.createElement("div");
+    waktu.className = "waktu-scout";
+    waktu.textContent = item.waktu;
+
+    kartu.append(nama, isiPesan, waktu);
+
+    if (item.nama === namaAnggotaScout) {
+      let hapus = document.createElement("button");
+      hapus.textContent = "Hapus";
+      hapus.onclick = () => hapusChatScout24(id, index);
+      kartu.appendChild(hapus);
+    }
+
+    isi.appendChild(kartu);
+  });
+}
+
+function kirimChatScout24() {
+  if (!namaAnggotaScout) {
+    alert("Atur nama anggota terlebih dahulu!");
+    return;
+  }
+
+  let id = document.getElementById(
+    "pilihChatScout24"
+  ).value;
+
+  let teks = document.getElementById(
+    "pesanBaruScout24"
+  ).value.trim();
+
+  if (!id) {
+    alert("Pilih room terlebih dahulu!");
+    return;
+  }
+
+  if (!teks) {
+    alert("Pesan tidak boleh kosong!");
+    return;
+  }
+
+  let room = dataRoomScout.find(r => r.id == id);
+
+  if (!room || !room.anggota.includes(namaAnggotaScout)) {
+    alert("Kamu bukan anggota room ini.");
+    return;
+  }
+
+  if (!semuaChatScout24[id]) {
+    semuaChatScout24[id] = [];
+  }
+
+  semuaChatScout24[id].push({
+    nama: namaAnggotaScout,
+    teks: teks,
+    waktu: new Date().toLocaleString("id-ID")
+  });
+
+  simpanChatScout24();
+
+  document.getElementById("pesanBaruScout24").value = "";
+
+  tampilkanChatScout24();
+}
+
+function hapusChatScout24(id, index) {
+  let pesan = semuaChatScout24[id];
+
+  if (!pesan || !pesan[index]) return;
+
+  if (pesan[index].nama !== namaAnggotaScout) {
+    alert("Kamu hanya bisa menghapus pesan sendiri.");
+    return;
+  }
+
+  if (!confirm("Hapus pesan ini?")) return;
+
+  pesan.splice(index, 1);
+  simpanChatScout24();
+  tampilkanChatScout24();
+}
+
+isiPilihanChatScout24();
+</script>
+<style>
+#papanTugas25 {
+  margin:20px 12px 100px;
+  padding:18px;
+  border-radius:18px;
+  background:#173b2d;
+  color:white;
+}
+#papanTugas25 input,
+#papanTugas25 select {
+  width:100%;
+  box-sizing:border-box;
+  padding:12px;
+  margin:7px 0;
+  border-radius:9px;
+  border:1px solid #789b83;
+}
+#papanTugas25 button {
+  padding:10px 13px;
+  margin:5px 3px;
+  border:0;
+  border-radius:8px;
+  background:#b9dfbd;
+  color:#173b2d;
+  font-weight:bold;
+}
+.tugas25 {
+  background:#28513e;
+  padding:13px;
+  border-radius:12px;
+  margin:10px 0;
+}
+.status25 {
+  font-size:12px;
+  color:#c8e4ce;
+}
+</style>
+
+<section id="papanTugas25">
+  <h2>📋 PAPAN TUGAS KELOMPOK</h2>
+  <p>Atur pekerjaan dan pantau kemajuan kelompokmu.</p>
+
+  <div class="tugas25">
+    <h3>Pilih Room</h3>
+    <select id="pilihRoom25" onchange="tampilkanTugas25()">
+      <option value="">Pilih kelompok</option>
+    </select>
+  </div>
+
+  <div class="tugas25">
+    <h3>➕ Buat Tugas Baru</h3>
+    <input id="namaTugas25" placeholder="Nama tugas">
+    <input id="deskripsiTugas25" placeholder="Deskripsi tugas">
+    <label>Penanggung jawab</label>
+    <select id="anggotaTugas25">
+      <option value="">Pilih anggota</option>
+    </select>
+    <label>Batas waktu</label>
+    <input type="date" id="tanggalTugas25">
+    <button onclick="buatTugas25()">Tambah Tugas</button>
+  </div>
+
+  <h3>Daftar Pekerjaan</h3>
+  <div id="daftarTugas25">
+    Pilih room terlebih dahulu.
+  </div>
+</section>
+
+<script>
+function isiRoom25() {
+  let pilih = document.getElementById("pilihRoom25");
+  pilih.innerHTML = '<option value="">Pilih kelompok</option>';
+
+  dataRoomScout
+    .filter(r => r.anggota.includes(namaAnggotaScout))
+    .forEach(room => {
+      let opsi = document.createElement("option");
+      opsi.value = room.id;
+      opsi.textContent = room.nama;
+      pilih.appendChild(opsi);
+    });
+}
+
+function isiAnggota25() {
+  let id = document.getElementById("pilihRoom25").value;
+  let room = dataRoomScout.find(r => r.id == id);
+  let pilih = document.getElementById("anggotaTugas25");
+
+  pilih.innerHTML = '<option value="">Pilih anggota</option>';
+
+  if (!room) return;
+
+  room.anggota.forEach(nama => {
+    let opsi = document.createElement("option");
+    opsi.value = nama;
+    opsi.textContent = nama;
+    pilih.appendChild(opsi);
+  });
+}
+
+function buatTugas25() {
+  let id = document.getElementById("pilihRoom25").value;
+  let room = dataRoomScout.find(r => r.id == id);
+
+  if (!room) {
+    alert("Pilih room terlebih dahulu!");
+    return;
+  }
+
+  if (room.ketua !== namaAnggotaScout) {
+    alert("Hanya ketua yang bisa membuat tugas.");
+    return;
+  }
+
+  let nama = document.getElementById("namaTugas25").value.trim();
+  let deskripsi = document.getElementById("deskripsiTugas25").value.trim();
+  let penanggungJawab = document.getElementById("anggotaTugas25").value;
+  let tanggal = document.getElementById("tanggalTugas25").value;
+
+  if (!nama || !penanggungJawab || !tanggal) {
+    alert("Lengkapi nama tugas, anggota, dan batas waktu!");
+    return;
+  }
+
+  if (!room.tugas) room.tugas = [];
+
+  room.tugas.push({
+    id: Date.now(),
+    nama: nama,
+    deskripsi: deskripsi,
+    penanggungJawab: penanggungJawab,
+    tanggal: tanggal,
+    selesai: false,
+    dibuatOleh: namaAnggotaScout
+  });
+
+  simpanDataRoomScout();
+
+  document.getElementById("namaTugas25").value = "";
+  document.getElementById("deskripsiTugas25").value = "";
+  document.getElementById("tanggalTugas25").value = "";
+
+  tampilkanTugas25();
+  alert("Tugas berhasil ditambahkan!");
+}
+
+function tampilkanTugas25() {
+  let id = document.getElementById("pilihRoom25").value;
+  let room = dataRoomScout.find(r => r.id == id);
+  let daftar = document.getElementById("daftarTugas25");
+
+  daftar.innerHTML = "";
+
+  isiAnggota25();
+
+  if (!room) {
+    daftar.textContent = "Pilih room terlebih dahulu.";
+    return;
+  }
+
+  if (!room.tugas || !room.tugas.length) {
+    daftar.textContent = "Belum ada tugas kelompok.";
+    return;
+  }
+
+  room.tugas.forEach((tugas, index) => {
+    let kartu = document.createElement("div");
+    kartu.className = "tugas25";
+
+    let judul = document.createElement("h3");
+    judul.textContent = tugas.nama;
+
+    let deskripsi = document.createElement("p");
+    deskripsi.textContent = tugas.deskripsi || "Tanpa deskripsi.";
+
+    let penanggung = document.createElement("p");
+    penanggung.textContent =
+      "Penanggung jawab: " +
+      (tugas.penanggungJawab || "Belum ditentukan");
+
+    let tanggal = document.createElement("p");
+    tanggal.textContent = "Batas waktu: " + tugas.tanggal;
+
+    let status = document.createElement("p");
+    status.className = "status25";
+    status.textContent = tugas.selesai
+      ? "✅ Selesai"
+      : "⏳ Belum selesai";
+
+    kartu.append(judul, deskripsi, penanggung, tanggal, status);
+
+    if (tugas.penanggungJawab === namaAnggotaScout ||
+        room.ketua === namaAnggotaScout) {
+      let tombol = document.createElement("button");
+      tombol.textContent = tugas.selesai
+        ? "Batalkan Selesai"
+        : "Tandai Selesai";
+
+      tombol.onclick = () => {
+        tugas.selesai = !tugas.selesai;
+        simpanDataRoomScout();
+        tampilkanTugas25();
+      };
+
+      kartu.appendChild(tombol);
+    }
+
+    if (room.ketua === namaAnggotaScout) {
+      let hapus = document.createElement("button");
+      hapus.textContent = "Hapus Tugas";
+
+      hapus.onclick = () => {
+        if (confirm("Hapus tugas ini?")) {
+          room.tugas.splice(index, 1);
+          simpanDataRoomScout();
+          tampilkanTugas25();
+        }
+      };
+
+      kartu.appendChild(hapus);
+    }
+
+    daftar.appendChild(kartu);
+  });
+}
+
+document.getElementById("pilihRoom25")
+  .addEventListener("change", isiAnggota25);
+
+isiRoom25();
+</script>
+</body>
+<style>
+#notifikasiScout26 {
+  margin:20px 12px 100px;
+  padding:18px;
+  background:#173b2d;
+  color:white;
+  border-radius:18px;
+}
+.notif26 {
+  padding:13px;
+  margin:10px 0;
+  background:#28513e;
+  border-radius:12px;
+  border-left:4px solid #b9dfbd;
+}
+.notif26.belum {
+  border-left-color:#f3cf74;
+}
+#notifikasiScout26 button {
+  padding:9px 13px;
+  margin:5px;
+  border:0;
+  border-radius:8px;
+  background:#b9dfbd;
+  color:#173b2d;
+  font-weight:bold;
+}
+</style>
+
+<section id="notifikasiScout26">
+  <h2>🔔 PUSAT NOTIFIKASI</h2>
+  <p>Semua informasi kegiatan kelompokmu.</p>
+
+  <div class="room-kartu">
+    <h3>Ringkasan</h3>
+    <p id="jumlahNotif26">Belum ada notifikasi.</p>
+    <button onclick="bacaSemuaNotif26()">Tandai Semua Dibaca</button>
+  </div>
+
+  <div id="daftarNotif26"></div>
+</section>
+
+<script>
+let riwayatNotif26 = JSON.parse(
+  localStorage.getItem("riwayatNotif26") || "[]"
+);
+
+function simpanNotif26() {
+  localStorage.setItem(
+    "riwayatNotif26",
+    JSON.stringify(riwayatNotif26)
+  );
+}
+
+function tambahNotif26(judul, isi, roomId) {
+  riwayatNotif26.unshift({
+    id: Date.now() + Math.random(),
+    judul: judul,
+    isi: isi,
+    roomId: roomId || null,
+    waktu: new Date().toLocaleString("id-ID"),
+    dibaca: false
+  });
+
+  if (riwayatNotif26.length > 100) {
+    riwayatNotif26.length = 100;
+  }
+
+  simpanNotif26();
+  tampilNotif26();
+}
+
+function tampilNotif26() {
+  let tempat = document.getElementById("daftarNotif26");
+  let ringkasan = document.getElementById("jumlahNotif26");
+
+  if (!tempat || !ringkasan) return;
+
+  tempat.innerHTML = "";
+
+  let belum = riwayatNotif26.filter(n => !n.dibaca).length;
+
+  ringkasan.textContent =
+    riwayatNotif26.length + " notifikasi | " +
+    belum + " belum dibaca";
+
+  if (!riwayatNotif26.length) {
+    tempat.textContent = "Belum ada aktivitas.";
+    return;
+  }
+
+  riwayatNotif26.forEach(notif => {
+    let kartu = document.createElement("div");
+    kartu.className = "notif26" +
+      (notif.dibaca ? "" : " belum");
+
+    let judul = document.createElement("b");
+    judul.textContent = notif.judul;
+
+    let isi = document.createElement("p");
+    isi.textContent = notif.isi;
+
+    let waktu = document.createElement("small");
+    waktu.textContent = notif.waktu;
+
+    kartu.append(judul, isi, waktu);
+
+    if (!notif.dibaca) {
+      let tombol = document.createElement("button");
+      tombol.textContent = "Tandai Dibaca";
+
+      tombol.onclick = () => {
+        notif.dibaca = true;
+        simpanNotif26();
+        tampilNotif26();
+      };
+
+      kartu.appendChild(tombol);
+    }
+
+    tempat.appendChild(kartu);
+  });
+}
+
+function bacaSemuaNotif26() {
+  riwayatNotif26.forEach(n => {
+    n.dibaca = true;
+  });
+
+  simpanNotif26();
+  tampilNotif26();
+}
+
+function periksaTenggat26() {
+  let sekarang = new Date();
+  sekarang.setHours(0, 0, 0, 0);
+
+  dataRoomScout.forEach(room => {
+    (room.tugas || []).forEach(tugas => {
+      if (!tugas.tanggal || tugas.selesai) return;
+
+      let tenggat = new Date(tugas.tanggal + "T00:00:00");
+      let selisih = Math.round(
+        (tenggat - sekarang) / 86400000
+      );
+
+      let kunci = "pengingat26_" + room.id + "_" + tugas.id;
+
+      if (selisih >= 0 && selisih <= 2 &&
+          !localStorage.getItem(kunci)) {
+
+        tambahNotif26(
+          "⏰ Pengingat Tugas",
+          tugas.nama + " di room " + room.nama +
+          " memiliki tenggat " +
+          (selisih === 0 ? "hari ini." : selisih + " hari lagi."),
+          room.id
+        );
+
+        localStorage.setItem(kunci, "1");
+      }
+    });
+  });
+}
+
+tampilNotif26();
+periksaTenggat26();
+</script>
+<style>
+#profilScout27 {
+  margin:20px 12px 100px;
+  padding:18px;
+  background:#173b2d;
+  color:white;
+  border-radius:18px;
+}
+#profilScout27 input,
+#profilScout27 select,
+#profilScout27 textarea {
+  width:100%;
+  box-sizing:border-box;
+  padding:12px;
+  margin:7px 0;
+  border:1px solid #789b83;
+  border-radius:9px;
+}
+#profilScout27 button {
+  padding:10px 14px;
+  margin:5px 3px;
+  border:0;
+  border-radius:8px;
+  background:#b9dfbd;
+  color:#173b2d;
+  font-weight:bold;
+}
+.fotoProfil27 {
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  background:#315b45;
+  display:block;
+  margin:12px auto;
+  border:3px solid #b9dfbd;
+}
+.statProfil27 {
+  background:#28513e;
+  padding:12px;
+  border-radius:10px;
+  text-align:center;
+}
+</style>
+
+<section id="profilScout27">
+  <h2>👤 PROFIL ANGGOTA</h2>
+  <p>Kenali dirimu sebagai anggota SCOUT ACADEMY.</p>
+
+  <div class="room-kartu">
+    <img id="fotoProfil27" class="fotoProfil27"
+      alt="Foto profil anggota">
+
+    <input type="file" id="pilihFoto27"
+      accept="image/*" onchange="ubahFoto27(event)">
+
+    <h3 id="namaTampilan27" style="text-align:center">
+      Anggota Pramuka
+    </h3>
+    <p id="bioTampilan27" style="text-align:center">
+      Belum ada biodata.
+    </p>
+  </div>
+
+  <div class="room-kartu">
+    <h3>✏️ Edit Profil</h3>
+
+    <label>Nama lengkap</label>
+    <input id="editNama27" placeholder="Nama kamu">
+
+    <label>Golongan</label>
+    <select id="editGolongan27">
+      <option value="Siaga">Siaga</option>
+      <option value="Penggalang">Penggalang</option>
+      <option value="Penegak">Penegak</option>
+      <option value="Pandega">Pandega</option>
+    </select>
+
+    <label>Deskripsi diri</label>
+    <textarea id="editBio27"
+      placeholder="Ceritakan sedikit tentang dirimu"></textarea>
+
+    <button onclick="simpanProfil27()">Simpan Profil</button>
+  </div>
+
+  <h3>📊 Statistik Anggota</h3>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+    <div class="statProfil27">
+      <h2 id="jumlahRoom27">0</h2>
+      <p>Room Diikuti</p>
+    </div>
+
+    <div class="statProfil27">
+      <h2 id="jumlahTugas27">0</h2>
+      <p>Tugas Selesai</p>
+    </div>
+  </div>
+</section>
+
+<script>
+let profilScout27 = JSON.parse(
+  localStorage.getItem("profilScout27") || "{}"
+);
+
+function simpanProfil27() {
+  let nama = document.getElementById("editNama27")
+    .value.trim();
+
+  let golongan = document.getElementById("editGolongan27")
+    .value;
+
+  let bio = document.getElementById("editBio27")
+    .value.trim();
+
+  if (!nama) {
+    alert("Nama tidak boleh kosong!");
+    return;
+  }
+
+  profilScout27.nama = nama;
+  profilScout27.golongan = golongan;
+  profilScout27.bio = bio;
+
+  namaAnggotaScout = nama;
+
+  localStorage.setItem("namaAnggotaScout", nama);
+  localStorage.setItem(
+    "profilScout27",
+    JSON.stringify(profilScout27)
+  );
+
+  tampilProfil27();
+  tampilkanRoomScout();
+
+  alert("Profil berhasil disimpan!");
+}
+
+function ubahFoto27(event) {
+  let file = event.target.files[0];
+
+  if (!file) return;
+
+  if (!file.type.startsWith("image/")) {
+    alert("Pilih file gambar!");
+    return;
+  }
+
+  if (file.size > 2 * 1024 * 1024) {
+    alert("Ukuran foto maksimal 2 MB.");
+    return;
+  }
+
+  let reader = new FileReader();
+
+  reader.onload = function(e) {
+    profilScout27.foto = e.target.result;
+
+    localStorage.setItem(
+      "profilScout27",
+      JSON.stringify(profilScout27)
+    );
+
+    tampilProfil27();
+  };
+
+  reader.readAsDataURL(file);
+}
+
+function tampilProfil27() {
+  document.getElementById("editNama27").value =
+    profilScout27.nama || namaAnggotaScout || "";
+
+  document.getElementById("editGolongan27").value =
+    profilScout27.golongan || "Penggalang";
+
+  document.getElementById("editBio27").value =
+    profilScout27.bio || "";
+
+  document.getElementById("namaTampilan27").textContent =
+    profilScout27.nama || namaAnggotaScout || "Anggota Pramuka";
+
+  document.getElementById("bioTampilan27").textContent =
+    profilScout27.bio || "Belum ada biodata.";
+
+  document.getElementById("fotoProfil27").src =
+    profilScout27.foto || "";
+
+  let roomSaya = dataRoomScout.filter(room =>
+    room.anggota.includes(namaAnggotaScout)
+  );
+
+  let tugasSelesai = 0;
+
+  roomSaya.forEach(room => {
+    (room.tugas || []).forEach(tugas => {
+      if (
+        tugas.selesai &&
+        (!tugas.penanggungJawab ||
+         tugas.penanggungJawab === namaAnggotaScout)
+      ) {
+        tugasSelesai++;
+      }
+    });
+  });
+
+  document.getElementById("jumlahRoom27").textContent =
+    roomSaya.length;
+
+  document.getElementById("jumlahTugas27").textContent =
+    tugasSelesai;
+}
+
+tampilProfil27();
+</script>
+<style>
+#temanScout28 {
+  margin:20px 12px 100px;
+  padding:18px;
+  border-radius:18px;
+  background:#173b2d;
+  color:white;
+}
+#temanScout28 input {
+  width:100%;
+  box-sizing:border-box;
+  padding:12px;
+  margin:7px 0;
+  border-radius:9px;
+  border:1px solid #789b83;
+}
+#temanScout28 button {
+  padding:10px 13px;
+  margin:5px 3px;
+  border:0;
+  border-radius:8px;
+  background:#b9dfbd;
+  color:#173b2d;
+  font-weight:bold;
+}
+.temanKartu28 {
+  background:#28513e;
+  padding:13px;
+  border-radius:12px;
+  margin:10px 0;
+}
+</style>
+
+<section id="temanScout28">
+  <h2>🤝 TEMAN PRAMUKA</h2>
+  <p>Kelola daftar teman dan kenalan anggota kelompok.</p>
+
+  <div class="temanKartu28">
+    <h3>Tambah Teman</h3>
+    <input id="namaTeman28"
+      placeholder="Masukkan nama teman">
+    <button onclick="tambahTeman28()">Tambah Teman</button>
+  </div>
+
+  <div class="temanKartu28">
+    <h3>Cari Teman</h3>
+    <input id="cariTeman28"
+      placeholder="Cari nama teman..."
+      oninput="tampilkanTeman28()">
+  </div>
+
+  <h3>Daftar Teman Saya</h3>
+  <div id="daftarTeman28"></div>
+</section>
+
+<script>
+let dataTeman28 = JSON.parse(
+  localStorage.getItem("dataTeman28") || "[]"
+);
+
+function simpanTeman28() {
+  localStorage.setItem(
+    "dataTeman28",
+    JSON.stringify(dataTeman28)
+  );
+}
+
+function tambahTeman28() {
+  let nama = document.getElementById(
+    "namaTeman28"
+  ).value.trim();
+
+  if (!nama) {
+    alert("Masukkan nama teman!");
+    return;
+  }
+
+  if (nama.toLowerCase() === namaAnggotaScout.toLowerCase()) {
+    alert("Itu nama akunmu sendiri!");
+    return;
+  }
+
+  if (dataTeman28.some(t =>
+    t.toLowerCase() === nama.toLowerCase()
+  )) {
+    alert("Nama tersebut sudah ada!");
+    return;
+  }
+
+  dataTeman28.push(nama);
+  simpanTeman28();
+
+  document.getElementById("namaTeman28").value = "";
+
+  tampilkanTeman28();
+  alert("Teman berhasil ditambahkan!");
+}
+
+function tampilkanTeman28() {
+  let tempat = document.getElementById("daftarTeman28");
+  let cari = document.getElementById("cariTeman28")
+    .value.toLowerCase();
+
+  tempat.innerHTML = "";
+
+  let hasil = dataTeman28.filter(nama =>
+    nama.toLowerCase().includes(cari)
+  );
+
+  if (!hasil.length) {
+    tempat.textContent = "Teman belum ditemukan.";
+    return;
+  }
+
+  hasil.forEach(nama => {
+    let kartu = document.createElement("div");
+    kartu.className = "temanKartu28";
+
+    let judul = document.createElement("b");
+    judul.textContent = "👤 " + nama;
+
+    let undang = document.createElement("button");
+    undang.textContent = "Undang ke Room";
+
+    undang.onclick = () => undangTeman28(nama);
+
+    let hapus = document.createElement("button");
+    hapus.textContent = "Hapus Teman";
+
+    hapus.onclick = () => {
+      if (!confirm("Hapus " + nama + " dari daftar teman?")) {
+        return;
+      }
+
+      dataTeman28 = dataTeman28.filter(t => t !== nama);
+      simpanTeman28();
+      tampilkanTeman28();
+    };
+
+    kartu.append(judul, document.createElement("br"), undang, hapus);
+    tempat.appendChild(kartu);
+  });
+}
+
+function undangTeman28(nama) {
+  let roomId = roomAktifScout;
+
+  if (!roomId) {
+    alert("Buka room terlebih dahulu di Bagian 22.");
+    return;
+  }
+
+  kirimUndanganScout(roomId, nama);
+}
+
+tampilkanTeman28();
+</script>
+<style>
+#galeriScout29 {
+  margin:20px 12px 100px;
+  padding:18px;
+  border-radius:18px;
+  background:#173b2d;
+  color:white;
+}
+#galeriScout29 input,
+#galeriScout29 select {
+  width:100%;
+  box-sizing:border-box;
+  padding:12px;
+  margin:7px 0;
+  border-radius:9px;
+}
+#galeriScout29 button {
+  padding:10px 13px;
+  margin:5px 3px;
+  border:0;
+  border-radius:8px;
+  background:#b9dfbd;
+  color:#173b2d;
+  font-weight:bold;
+}
+.galeri29 {
+  background:#28513e;
+  padding:12px;
+  border-radius:12px;
+  margin:10px 0;
+}
+.galeri29 img {
+  width:100%;
+  max-height:250px;
+  object-fit:cover;
+  border-radius:10px;
+  margin-top:8px;
+}
+</style>
+
+<section id="galeriScout29">
+  <h2>📸 GALERI KEGIATAN</h2>
+  <p>Dokumentasikan kenangan dan kegiatan kelompokmu.</p>
+
+  <div class="galeri29">
+    <h3>Tambah Foto</h3>
+
+    <select id="roomGaleri29">
+      <option value="">Pilih room</option>
+    </select>
+
+    <input id="judulGaleri29"
+      placeholder="Judul kegiatan">
+
+    <input id="fotoGaleri29"
+      type="file"
+      accept="image/*">
+
+    <button onclick="simpanFoto29()">Simpan Foto</button>
+  </div>
+
+  <h3>Dokumentasi Saya</h3>
+  <div id="daftarGaleri29"></div>
+</section>
+
+<script>
+let dataGaleri29 = JSON.parse(
+  localStorage.getItem("dataGaleri29") || "[]"
+);
+
+function simpanDataGaleri29() {
+  localStorage.setItem(
+    "dataGaleri29",
+    JSON.stringify(dataGaleri29)
+  );
+}
+
+function isiRoomGaleri29() {
+  let pilih = document.getElementById("roomGaleri29");
+
+  pilih.innerHTML = '<option value="">Pilih room</option>';
+
+  dataRoomScout
+    .filter(r => r.anggota.includes(namaAnggotaScout))
+    .forEach(room => {
+      let opsi = document.createElement("option");
+      opsi.value = room.id;
+      opsi.textContent = room.nama;
+      pilih.appendChild(opsi);
+    });
+}
+
+function simpanFoto29() {
+  let id = document.getElementById("roomGaleri29").value;
+  let judul = document.getElementById("judulGaleri29")
+    .value.trim();
+
+  let file = document.getElementById("fotoGaleri29")
+    .files[0];
+
+  let room = dataRoomScout.find(r => r.id == id);
+
+  if (!room || !room.anggota.includes(namaAnggotaScout)) {
+    alert("Pilih room yang kamu ikuti!");
+    return;
+  }
+
+  if (!judul || !file) {
+    alert("Isi judul dan pilih foto!");
+    return;
+  }
+
+  if (!file.type.startsWith("image/")) {
+    alert("File harus berupa gambar!");
+    return;
+  }
+
+  if (file.size > 1024 * 1024) {
+    alert("Ukuran foto maksimal 1 MB agar penyimpanan HP tidak cepat penuh.");
+    return;
+  }
+
+  let reader = new FileReader();
+
+  reader.onload = function(e) {
+    dataGaleri29.push({
+      id: Date.now(),
+      roomId: Number(id),
+      judul: judul,
+      foto: e.target.result,
+      pengirim: namaAnggotaScout,
+      waktu: new Date().toLocaleDateString("id-ID")
+    });
+
+    simpanDataGaleri29();
+    tampilGaleri29();
+
+    document.getElementById("judulGaleri29").value = "";
+    document.getElementById("fotoGaleri29").value = "";
+
+    alert("Foto berhasil disimpan!");
+  };
+
+  reader.readAsDataURL(file);
+}
+
+function tampilGaleri29() {
+  let tempat = document.getElementById("daftarGaleri29");
+  tempat.innerHTML = "";
+
+  let milikSaya = dataGaleri29.filter(foto =>
+    dataRoomScout.some(room =>
+      room.id === foto.roomId &&
+      room.anggota.includes(namaAnggotaScout)
+    )
+  );
+
+  if (!milikSaya.length) {
+    tempat.textContent = "Belum ada foto kegiatan.";
+    return;
+  }
+
+  milikSaya.slice().reverse().forEach(foto => {
+    let kartu = document.createElement("div");
+    kartu.className = "galeri29";
+
+    let judul = document.createElement("h3");
+    judul.textContent = foto.judul;
+
+    let gambar = document.createElement("img");
+    gambar.src = foto.foto;
+    gambar.alt = foto.judul;
+
+    let info = document.createElement("p");
+    info.textContent =
+      "Diunggah oleh " + foto.pengirim +
+      " • " + foto.waktu;
+
+    let hapus = document.createElement("button");
+    hapus.textContent = "Hapus Foto";
+
+    hapus.onclick = () => {
+      if (foto.pengirim !== namaAnggotaScout) {
+        alert("Kamu hanya bisa menghapus foto sendiri.");
+        return;
+      }
+
+      if (!confirm("Hapus foto ini?")) return;
+
+      dataGaleri29 = dataGaleri29.filter(f =>
+        f.id !== foto.id
+      );
+
+      simpanDataGaleri29();
+      tampilGaleri29();
+    };
+
+    kartu.append(judul, gambar, info, hapus);
+    tempat.appendChild(kartu);
+  });
+}
+
+isiRoomGaleri29();
+tampilGaleri29();
+</script>
+<style>
+#pollingScout30 {
+  margin:20px 12px 100px;
+  padding:18px;
+  background:#173b2d;
+  color:white;
+  border-radius:18px;
+}
+#pollingScout30 input,
+#pollingScout30 select {
+  width:100%;
+  box-sizing:border-box;
+  padding:12px;
+  margin:7px 0;
+  border-radius:9px;
+  border:0;
+}
+#pollingScout30 button {
+  padding:10px 13px;
+  margin:5px 3px;
+  border:0;
+  border-radius:8px;
+  background:#b9dfbd;
+  color:#173b2d;
+  font-weight:bold;
+}
+.poll30 {
+  background:#28513e;
+  padding:13px;
+  border-radius:12px;
+  margin:12px 0;
+}
+.opsi30 {
+  display:block;
+  padding:10px;
+  margin:7px 0;
+  background:#416c53;
+  border-radius:8px;
+}
+.batang30 {
+  height:10px;
+  background:#b9dfbd;
+  border-radius:10px;
+  margin-top:5px;
+}
+</style>
+
+<section id="pollingScout30">
+  <h2>🗳️ POLLING KELOMPOK</h2>
+  <p>Buat keputusan bersama melalui voting anggota room.</p>
+
+  <div class="poll30">
+    <h3>Buat Polling Baru</h3>
+
+    <select id="roomPoll30">
+      <option value="">Pilih room</option>
+    </select>
+
+    <input id="judulPoll30"
+      placeholder="Pertanyaan polling">
+
+    <input id="opsiPoll30a"
+      placeholder="Pilihan pertama">
+
+    <input id="opsiPoll30b"
+      placeholder="Pilihan kedua">
+
+    <input id="opsiPoll30c"
+      placeholder="Pilihan ketiga (opsional)">
+
+    <button onclick="buatPoll30()">Buat Polling</button>
+  </div>
+
+  <h3>Polling Berlangsung</h3>
+  <div id="daftarPoll30"></div>
+</section>
+
+<script>
+let dataPoll30 = JSON.parse(
+  localStorage.getItem("dataPoll30") || "[]"
+);
+
+function simpanPoll30() {
+  localStorage.setItem(
+    "dataPoll30",
+    JSON.stringify(dataPoll30)
+  );
+}
+
+function isiRoomPoll30() {
+  let pilih = document.getElementById("roomPoll30");
+  pilih.innerHTML = '<option value="">Pilih room</option>';
+
+  dataRoomScout
+    .filter(r => r.anggota.includes(namaAnggotaScout))
+    .forEach(room => {
+      let opsi = document.createElement("option");
+      opsi.value = room.id;
+      opsi.textContent = room.nama;
+      pilih.appendChild(opsi);
+    });
+}
+
+function buatPoll30() {
+  let roomId = Number(
+    document.getElementById("roomPoll30").value
+  );
+
+  let pertanyaan = document.getElementById("judulPoll30")
+    .value.trim();
+
+  let pilihan = [
+    document.getElementById("opsiPoll30a").value.trim(),
+    document.getElementById("opsiPoll30b").value.trim(),
+    document.getElementById("opsiPoll30c").value.trim()
+  ].filter(Boolean);
+
+  let room = dataRoomScout.find(r => r.id === roomId);
+
+  if (!room || !room.anggota.includes(namaAnggotaScout)) {
+    alert("Pilih room yang kamu ikuti!");
+    return;
+  }
+
+  if (!pertanyaan || pilihan.length < 2) {
+    alert("Isi pertanyaan dan minimal dua pilihan!");
+    return;
+  }
+
+  if (room.ketua !== namaAnggotaScout) {
+    alert("Hanya ketua room yang bisa membuat polling!");
+    return;
+  }
+
+  dataPoll30.push({
+    id: Date.now(),
+    roomId: roomId,
+    pertanyaan: pertanyaan,
+    pilihan: pilihan,
+    suara: {},
+    pembuat: namaAnggotaScout
+  });
+
+  simpanPoll30();
+  tampilPoll30();
+
+  document.getElementById("judulPoll30").value = "";
+  document.getElementById("opsiPoll30a").value = "";
+  document.getElementById("opsiPoll30b").value = "";
+  document.getElementById("opsiPoll30c").value = "";
+
+  alert("Polling berhasil dibuat!");
+}
+
+function pilihSuara30(id, index) {
+  let poll = dataPoll30.find(p => p.id === id);
+  if (!poll) return;
+
+  let room = dataRoomScout.find(r => r.id === poll.roomId);
+
+  if (!room || !room.anggota.includes(namaAnggotaScout)) {
+    alert("Kamu bukan anggota room ini!");
+    return;
+  }
+
+  if (poll.suara[namaAnggotaScout] !== undefined) {
+    alert("Kamu sudah memberikan suara!");
+    return;
+  }
+
+  poll.suara[namaAnggotaScout] = index;
+
+  simpanPoll30();
+  tampilPoll30();
+}
+
+function tampilPoll30() {
+  let tempat = document.getElementById("daftarPoll30");
+  tempat.innerHTML = "";
+
+  let milikSaya = dataPoll30.filter(poll =>
+    dataRoomScout.some(room =>
+      room.id === poll.roomId &&
+      room.anggota.includes(namaAnggotaScout)
+    )
+  );
+
+  if (!milikSaya.length) {
+    tempat.textContent = "Belum ada polling.";
+    return;
+  }
+
+  milikSaya.slice().reverse().forEach(poll => {
+    let kartu = document.createElement("div");
+    kartu.className = "poll30";
+
+    let judul = document.createElement("h3");
+    judul.textContent = poll.pertanyaan;
+    kartu.appendChild(judul);
+
+    let total = Object.keys(poll.suara).length;
+
+    poll.pilihan.forEach((opsi, index) => {
+      let jumlah = Object.values(poll.suara)
+        .filter(v => v === index).length;
+
+      let label = document.createElement("div");
+      label.className = "opsi30";
+
+      let teks = document.createElement("span");
+      teks.textContent =
+        opsi + " • " + jumlah + " suara";
+
+      let batang = document.createElement("div");
+      batang.className = "batang30";
+      batang.style.width =
+        (total ? jumlah / total * 100 : 0) + "%";
+
+      label.append(teks, batang);
+
+      if (poll.suara[namaAnggotaScout] === undefined) {
+        let tombol = document.createElement("button");
+        tombol.textContent = "Pilih";
+        tombol.onclick = () =>
+          pilihSuara30(poll.id, index);
+        label.appendChild(tombol);
+      }
+
+      kartu.appendChild(label);
+    });
+
+    let info = document.createElement("p");
+    info.textContent = "Total suara: " + total;
+    kartu.appendChild(info);
+
+    if (poll.pembuat === namaAnggotaScout) {
+      let hapus = document.createElement("button");
+      hapus.textContent = "Hapus Polling";
+
+      hapus.onclick = () => {
+        if (!confirm("Hapus polling ini?")) return;
+
+        dataPoll30 = dataPoll30.filter(
+          p => p.id !== poll.id
+        );
+
+        simpanPoll30();
+        tampilPoll30();
+      };
+
+      kartu.appendChild(hapus);
+    }
+
+    tempat.appendChild(kartu);
+  });
+}
+
+isiRoomPoll30();
+tampilPoll30();
+</script>
+<style>
+#kalenderScout31 {
+  margin:20px 12px 100px;
+  padding:18px;
+  background:#173b2d;
+  color:white;
+  border-radius:18px;
+}
+#kalenderScout31 input,
+#kalenderScout31 select {
+  width:100%;
+  box-sizing:border-box;
+  padding:12px;
+  margin:7px 0;
+  border:0;
+  border-radius:9px;
+}
+#kalenderScout31 button {
+  padding:10px 13px;
+  margin:5px 3px;
+  border:0;
+  border-radius:8px;
+  background:#b9dfbd;
+  color:#173b2d;
+  font-weight:bold;
+}
+.agenda31 {
+  background:#28513e;
+  padding:13px;
+  border-radius:12px;
+  margin:10px 0;
+}
+.agenda31 small {
+  color:#d4e9d8;
+}
+</style>
+
+<section id="kalenderScout31">
+  <h2>📅 KALENDER KEGIATAN</h2>
+  <p>Atur dan lihat agenda kegiatan kelompokmu.</p>
+
+  <div class="agenda31">
+    <h3>Tambah Agenda</h3>
+
+    <select id="roomKalender31">
+      <option value="">Pilih room</option>
+    </select>
+
+    <input id="judulAgenda31"
+      placeholder="Nama kegiatan">
+
+    <input id="tanggalAgenda31" type="date">
+
+    <input id="lokasiAgenda31"
+      placeholder="Lokasi kegiatan">
+
+    <button onclick="tambahAgenda31()">
+      Simpan Agenda
+    </button>
+  </div>
+
+  <h3>Filter Tanggal</h3>
+  <input id="filterTanggal31" type="date"
+    onchange="tampilKalender31()">
+
+  <button onclick="hapusFilter31()">
+    Tampilkan Semua
+  </button>
+
+  <h3>Daftar Agenda</h3>
+  <div id="daftarAgenda31"></div>
+</section>
+
+<script>
+let dataAgenda31 = JSON.parse(
+  localStorage.getItem("dataAgenda31") || "[]"
+);
+
+function simpanAgenda31() {
+  localStorage.setItem(
+    "dataAgenda31",
+    JSON.stringify(dataAgenda31)
+  );
+}
+
+function isiRoomKalender31() {
+  let pilih = document.getElementById("roomKalender31");
+
+  pilih.innerHTML = '<option value="">Pilih room</option>';
+
+  dataRoomScout
+    .filter(room =>
+      room.anggota.includes(namaAnggotaScout)
+    )
+    .forEach(room => {
+      let opsi = document.createElement("option");
+      opsi.value = room.id;
+      opsi.textContent = room.nama;
+      pilih.appendChild(opsi);
+    });
+}
+
+function tambahAgenda31() {
+  let roomId = Number(
+    document.getElementById("roomKalender31").value
+  );
+
+  let judul = document.getElementById("judulAgenda31")
+    .value.trim();
+
+  let tanggal = document.getElementById("tanggalAgenda31")
+    .value;
+
+  let lokasi = document.getElementById("lokasiAgenda31")
+    .value.trim();
+
+  let room = dataRoomScout.find(r => r.id === roomId);
+
+  if (!room || !room.anggota.includes(namaAnggotaScout)) {
+    alert("Pilih room yang kamu ikuti!");
+    return;
+  }
+
+  if (!judul || !tanggal) {
+    alert("Nama kegiatan dan tanggal wajib diisi!");
+    return;
+  }
+
+  dataAgenda31.push({
+    id: Date.now(),
+    roomId: roomId,
+    judul: judul,
+    tanggal: tanggal,
+    lokasi: lokasi || "Belum ditentukan",
+    pembuat: namaAnggotaScout
+  });
+
+  simpanAgenda31();
+  tampilKalender31();
+
+  document.getElementById("judulAgenda31").value = "";
+  document.getElementById("tanggalAgenda31").value = "";
+  document.getElementById("lokasiAgenda31").value = "";
+
+  alert("Agenda berhasil ditambahkan!");
+}
+
+function hapusAgenda31(id) {
+  let agenda = dataAgenda31.find(a => a.id === id);
+
+  if (!agenda) return;
+
+  if (agenda.pembuat !== namaAnggotaScout) {
+    alert("Hanya pembuat agenda yang bisa menghapusnya.");
+    return;
+  }
+
+  if (!confirm("Hapus agenda ini?")) return;
+
+  dataAgenda31 = dataAgenda31.filter(a => a.id !== id);
+
+  simpanAgenda31();
+  tampilKalender31();
+}
+
+function hapusFilter31() {
+  document.getElementById("filterTanggal31").value = "";
+  tampilKalender31();
+}
+
+function tampilKalender31() {
+  let tempat = document.getElementById("daftarAgenda31");
+  let filter = document.getElementById("filterTanggal31").value;
+
+  tempat.innerHTML = "";
+
+  let agendaSaya = dataAgenda31.filter(agenda =>
+    dataRoomScout.some(room =>
+      room.id === agenda.roomId &&
+      room.anggota.includes(namaAnggotaScout)
+    )
+  );
+
+  if (filter) {
+    agendaSaya = agendaSaya.filter(
+      agenda => agenda.tanggal === filter
+    );
+  }
+
+  agendaSaya.sort((a, b) =>
+    a.tanggal.localeCompare(b.tanggal)
+  );
+
+  if (!agendaSaya.length) {
+    tempat.textContent = "Belum ada agenda kegiatan.";
+    return;
+  }
+
+  agendaSaya.forEach(agenda => {
+    let room = dataRoomScout.find(
+      r => r.id === agenda.roomId
+    );
+
+    let kartu = document.createElement("div");
+    kartu.className = "agenda31";
+
+    let judul = document.createElement("h3");
+    judul.textContent = "📌 " + agenda.judul;
+
+    let tanggal = document.createElement("p");
+    tanggal.textContent =
+      "📆 " + new Date(
+        agenda.tanggal + "T00:00:00"
+      ).toLocaleDateString("id-ID", {
+        day:"numeric",
+        month:"long",
+        year:"numeric"
+      });
+
+    let lokasi = document.createElement("p");
+    lokasi.textContent = "📍 " + agenda.lokasi;
+
+    let namaRoom = document.createElement("small");
+    namaRoom.textContent =
+      "Room: " + (room ? room.nama : "Tidak ditemukan");
+
+    kartu.append(judul, tanggal, lokasi, namaRoom);
+
+    if (agenda.pembuat === namaAnggotaScout) {
+      let hapus = document.createElement("button");
+      hapus.textContent = "Hapus Agenda";
+      hapus.onclick = () => hapusAgenda31(agenda.id);
+      kartu.appendChild(hapus);
+    }
+
+    tempat.appendChild(kartu);
+  });
+}
+
+isiRoomKalender31();
+tampilKalender31();
+</script>
+<style>
+#dashboardScout32 {
+  margin:20px 12px 110px;
+  padding:18px;
+  background:#173b2d;
+  color:white;
+  border-radius:18px;
+}
+#dashboardScout32 .dash-hero {
+  padding:20px;
+  background:linear-gradient(135deg,#28513e,#416c53);
+  border-radius:15px;
+  margin-bottom:15px;
+}
+#dashboardScout32 .dash-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+}
+#dashboardScout32 .dash-card {
+  padding:15px;
+  background:#28513e;
+  border-radius:12px;
+  text-align:center;
+}
+#dashboardScout32 .dash-number {
+  display:block;
+  font-size:28px;
+  font-weight:bold;
+  color:#b9dfbd;
+  margin-top:7px;
+}
+#dashboardScout32 button {
+  padding:11px 14px;
+  border:0;
+  border-radius:9px;
+  background:#b9dfbd;
+  color:#173b2d;
+  font-weight:bold;
+  margin:5px 3px;
+}
+#dashboardScout32 .dash-info {
+  background:#28513e;
+  border-radius:12px;
+  padding:14px;
+  margin-top:14px;
+}
+</style>
+
+<section id="dashboardScout32">
+  <div class="dash-hero">
+    <h2>🏕️ SCOUT COMMUNITY</h2>
+    <h3 id="salamDashboard32">Selamat datang!</h3>
+    <p>Tempat belajar, bekerja sama, dan berkembang bersama Pramuka.</p>
+  </div>
+
+  <h3>📊 Statistik Komunitas</h3>
+
+  <div class="dash-grid">
+    <div class="dash-card">
+      🏠 Room Saya
+      <span class="dash-number" id="jumlahRoom32">0</span>
+    </div>
+
+    <div class="dash-card">
+      👥 Teman
+      <span class="dash-number" id="jumlahTeman32">0</span>
+    </div>
+
+    <div class="dash-card">
+      📸 Foto Kegiatan
+      <span class="dash-number" id="jumlahFoto32">0</span>
+    </div>
+
+    <div class="dash-card">
+      🗳️ Polling
+      <span class="dash-number" id="jumlahPolling32">0</span>
+    </div>
+
+    <div class="dash-card">
+      📅 Agenda
+      <span class="dash-number" id="jumlahAgenda32">0</span>
+    </div>
+
+    <div class="dash-card">
+      📋 Tugas Kelompok
+      <span class="dash-number" id="jumlahTugas32">0</span>
+    </div>
+  </div>
+
+  <div class="dash-info">
+    <h3>📌 Agenda Terdekat</h3>
+    <div id="agendaTerdekat32">
+      Belum ada agenda.
+    </div>
+  </div>
+
+  <div class="dash-info">
+    <h3>📋 Tugas Belum Selesai</h3>
+    <div id="tugasBelum32">
+      Tidak ada tugas.
+    </div>
+  </div>
+
+  <div class="dash-info">
+    <h3>⚡ Pintasan</h3>
+    <button onclick="document.getElementById('galeriScout29').scrollIntoView({behavior:'smooth'})">
+      Galeri
+    </button>
+
+    <button onclick="document.getElementById('pollingScout30').scrollIntoView({behavior:'smooth'})">
+      Polling
+    </button>
+
+    <button onclick="document.getElementById('kalenderScout31').scrollIntoView({behavior:'smooth'})">
+      Kalender
+    </button>
+
+    <button onclick="document.getElementById('roomKelompokScout').scrollIntoView({behavior:'smooth'})">
+      Room
+    </button>
+  </div>
+</section>
+
+<script>
+function perbaruiDashboard32() {
+  let nama = namaAnggotaScout || "Anggota";
+
+  document.getElementById("salamDashboard32")
+    .textContent = "Halo, " + nama + "! 👋";
+
+  let roomSaya = dataRoomScout.filter(room =>
+    room.anggota.includes(nama)
+  );
+
+  let idRoomSaya = roomSaya.map(room => room.id);
+
+  document.getElementById("jumlahRoom32").textContent =
+    roomSaya.length;
+
+  document.getElementById("jumlahTeman32").textContent =
+    typeof dataTeman28 !== "undefined"
+      ? dataTeman28.length : 0;
+
+  document.getElementById("jumlahFoto32").textContent =
+    typeof dataGaleri29 !== "undefined"
+      ? dataGaleri29.filter(f => idRoomSaya.includes(f.roomId)).length
+      : 0;
+
+  document.getElementById("jumlahPolling32").textContent =
+    typeof dataPoll30 !== "undefined"
+      ? dataPoll30.filter(p => idRoomSaya.includes(p.roomId)).length
+      : 0;
+
+  document.getElementById("jumlahAgenda32").textContent =
+    typeof dataAgenda31 !== "undefined"
+      ? dataAgenda31.filter(a => idRoomSaya.includes(a.roomId)).length
+      : 0;
+
+  let semuaTugas = [];
+
+  roomSaya.forEach(room => {
+    if (Array.isArray(room.tugas)) {
+      room.tugas.forEach(tugas => {
+        semuaTugas.push({
+          nama: tugas.nama,
+          selesai: tugas.selesai,
+          room: room.nama
+        });
+      });
+    }
+  });
+
+  document.getElementById("jumlahTugas32").textContent =
+    semuaTugas.length;
+
+  let belum = semuaTugas.filter(t => !t.selesai);
+  let tempatTugas = document.getElementById("tugasBelum32");
+
+  tempatTugas.innerHTML = "";
+
+  if (!belum.length) {
+    tempatTugas.textContent = "Semua tugas sudah selesai! 🎉";
+  } else {
+    belum.slice(0,5).forEach(tugas => {
+      let baris = document.createElement("p");
+      baris.textContent =
+        "• " + tugas.nama + " (" + tugas.room + ")";
+      tempatTugas.appendChild(baris);
+    });
+  }
+
+  let agenda = typeof dataAgenda31 !== "undefined"
+    ? dataAgenda31
+        .filter(a => idRoomSaya.includes(a.roomId))
+        .filter(a => a.tanggal >=
+          new Date().toISOString().slice(0,10))
+        .sort((a,b) => a.tanggal.localeCompare(b.tanggal))
+    : [];
+
+  let tempatAgenda =
+    document.getElementById("agendaTerdekat32");
+
+  tempatAgenda.innerHTML = "";
+
+  if (!agenda.length) {
+    tempatAgenda.textContent = "Belum ada agenda mendatang.";
+  } else {
+    agenda.slice(0,5).forEach(item => {
+      let baris = document.createElement("p");
+      baris.textContent =
+        "📅 " + item.tanggal + " • " + item.judul;
+      tempatAgenda.appendChild(baris);
+    });
+  }
+}
+
+perbaruiDashboard32();
+</script>
+</html>
